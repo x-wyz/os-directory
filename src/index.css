@@ -1,6 +1,31 @@
 :root {
 	--bg-color: #fffaeb;
 	--bg-color-content: #fff4d1;
+
+  --color-light-blue: rgb(194,214,234);
+  --color-light-blue-secondary: rgb(207,227,238);
+  --color-light-blue-tertiary: rgb(181, 205, 230);
+
+  --color-mist: rgb(178,204,215);
+  --color-mist-secondary:rgb(205,229,234);
+  --color-mist-tertiary: rgb(174, 199, 209);
+  --color-mist-quaternary: rgb(76, 105, 117);
+
+  --color-tacao: #e8b37d;
+  --color-tacao-secondary: #e3bc94;
+
+  --color-dark-blue: rgb(71,124,179);
+  --color-dark-blue-secondary: rgb(92,152,214);
+
+  --color-green: rgb(4, 105, 4);
+
+  --small-increment: 0.4em;
+  --medium-increment: 0.8em;
+  --standard-increment: 1.4em;
+
+  --base-color-turquoise: rgb(18 97 105);
+
+  --blueish-white: rgb(237, 248, 252);
 }
 
 /* CSS Reset */

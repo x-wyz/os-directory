@@ -1,0 +1,19 @@
+.navbar {
+	position: fixed;
+	top: 20%;
+	left: 1%;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	min-width: 50px;
+	background: var(--color-mist-secondary);
+	padding: 0.5em 0;
+	height: 320px;
+	border-radius: 1%;
+	border: 3px solid var(--color-mist-quaternary);
+}
+
+.nav-item-text {
+	font-size: 20px;
+}

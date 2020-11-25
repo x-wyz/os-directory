@@ -13,7 +13,7 @@ class Navbar extends Component {
 	render(){
 		return (
 			<div className="navbar">
-				<NavigationLink icon={faHome} link="/" iconClass="home-ico" text="Home" />
+				<NavigationLink icon={faHome} link="/home" iconClass="home-ico" text="Home" />
 				<NavigationLink icon={faSearch} link="/search" iconClass="search-ico" text="Search" />
 				{
 					this.props.user 
@@ -22,10 +22,10 @@ class Navbar extends Component {
 						<NavigationLink icon={faComments} link="/messages" iconClass="message-ico" text="Messages" />
 						<NavigationLink icon={faProjectDiagram} link="/project" iconClass="project-ico" text="Userprojects" />
 						<NavigationLink icon={faUser} link="/profile" iconClass="profile-ico" text="Profile" />
-						<NavigationLink icon={signOut} text="Sign out" link="/" iconClass="signout-ico" addText={true} />
+						<NavigationLink icon={signOut} text="Sign out" link="#" iconClass="signout-ico" addText={true} />
 					</React.Fragment>
 					:
-					<NavigationLink icon={signIn} text="Login" link="/" iconClass="signin-ico" addText={true} />
+					<NavigationLink icon={signIn} text="Login" link="#" iconClass="signin-ico" addText={true} />
 				}
 			</div>
 		)

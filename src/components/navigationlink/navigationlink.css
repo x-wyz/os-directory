@@ -1,0 +1,32 @@
+.navigation-link {
+	color: black;
+	display: block;
+	width: 100%;
+	display: flex;
+	text-decoration: none;
+	flex-direction: column;
+	padding: 0.2em 0.6em;
+	margin: 0.1em 0;
+	font-size: 40px;
+	text-align: center;
+	background: var(--color-mist);
+	transition: 0.2s background;
+}
+
+.navigation-link:hover {
+	background: var(--color-mist-tertiary);
+}
+
+.current-nav {
+	color: white;
+	background: var(--color-mist-quaternary);
+}
+
+.current-nav:hover {
+	background: var(--color-mist-quaternary);
+}
+
+.nav-item-icon {
+	position: relative;
+	left: 5px;
+}
