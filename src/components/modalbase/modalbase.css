@@ -1,0 +1,17 @@
+.modal-container {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	position: fixed;
+	width: 100vw;
+	height: 100vh;
+	background: rgba(43, 43, 43, 0.8);
+	top: 0;
+	left: 0;
+	z-index: 3;
+}
+
+.modal {
+	display: flex;
+	flex-direction: column;
+}
