@@ -1,0 +1,40 @@
+.loginmodal-content-container {
+	background: #898989;
+	min-width: 400px;
+	width: 30vw;
+}
+
+.loginmodal-header { 
+	display: flex;
+	flex-direction: row;
+	text-align: center;
+	font-size: 20px;
+	margin-bottom: var(--medium-increment);
+	font-weight: bold;
+	box-sizing: border-box;
+}
+
+.loginmodal-title {
+	width: 50%;
+	padding: var(--small-increment);
+	cursor: pointer;
+}
+
+.loginmodal-login-header {
+	border-right: 1px solid var(--dark-gray);
+}
+
+.loginmodal-submit-button{
+	width: 90%;
+	margin: 0 auto var(--standard-increment);
+}
+
+.current-loginmodal-title {
+	color:white;
+	background: var(--dark-gray);
+	border: 3px solid var(--dark-gray);
+}
+
+.not-current-loginmodal-title {
+	border: 3px solid #898989;
+}

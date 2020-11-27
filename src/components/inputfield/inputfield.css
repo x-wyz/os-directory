@@ -1,0 +1,24 @@
+.inputfield-container {
+	display: flex;
+	flex-direction: column;
+	width: 90%;
+	margin: 0 auto var(--medium-increment);
+}
+
+.input-editor {
+	outline: none;
+	text-align: center;
+	border: 0;
+	box-sizing: border-box;
+	padding: calc(var(--small-increment) - 0.1em);
+}
+
+.inputfield-label {
+	margin-bottom: 0.2em;
+	font-size: 1.1em;
+}
+
+.input-editor:focus {
+	border-left: 12px solid var(--dark-gray);
+	border-right: 12px solid var(--dark-gray);
+}

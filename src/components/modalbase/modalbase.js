@@ -3,7 +3,9 @@ import './modalbase.css';
 
 function ModalBase({ className, children, exitFunction }){
 	return (
-		<div className="modal-container" onClick={exitFunction ? exitFunction : () => {console.log('no exit function')} }>
+		<div className="modal-container">
+			<div className="modal-background" onClick={exitFunction}>
+			</div>
 			<div className={`modal ${className}`}>
 			{
 				children

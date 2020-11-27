@@ -1,0 +1,16 @@
+.button {
+	background: var(--color-tacao);
+	padding: var(--medium-increment);
+	border: 0;
+	font-size: 14px;
+	text-align: center;
+	outline: none;
+	cursor: pointer;
+	transition: background 0.2s;
+	font-weight: bold;
+	display: block;
+}
+
+.button:hover {
+	background: var(--color-tacao-secondary);
+}

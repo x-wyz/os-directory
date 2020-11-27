@@ -1,7 +1,6 @@
 .modal-container {
 	display: flex;
 	justify-content: center;
-	align-items: center;
 	position: fixed;
 	width: 100vw;
 	height: 100vh;
@@ -11,7 +10,12 @@
 	z-index: 3;
 }
 
+.modal-background {
+	width: 100%;
+}
+
 .modal {
 	display: flex;
-	flex-direction: column;
+	position: absolute;
+	top: 20%;
 }
