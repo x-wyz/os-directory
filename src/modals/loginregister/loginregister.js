@@ -87,6 +87,13 @@ class LoginRegister extends Component {
 							<div onClick={() => this.swap(false)} className={`loginmodal-title ${!login ? 'current-loginmodal-title' : 'not-current-loginmodal-title'}`}>Register</div>
 						</div>
 						{
+							servermessage
+							?
+							<ServerMessage message={servermessage} error={this.state.servererror} />
+							:
+							null
+						}
+						{
 							login
 							?
 							this.loginContent()
@@ -95,13 +102,6 @@ class LoginRegister extends Component {
 						}
 					</div>
 				</ModalBase>
-				{
-					servermessage
-					?
-					<ServerMessage message={servermessage} error={this.state.servererror} />
-					:
-					null
-				}
 			</div>
 		)
 	}

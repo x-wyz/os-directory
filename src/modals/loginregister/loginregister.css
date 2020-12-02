@@ -38,9 +38,3 @@
 	color: white;
 	border: 3px solid var(--dark-gray);
 }
-
-.loginregister-hidden-overflow {
-	height: 100vh;
-	position: relative;
-	overflow-y: hidden;
-}
