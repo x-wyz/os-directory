@@ -1,0 +1,45 @@
+.servermessage-container {
+	position: absolute;
+	bottom: 2%;
+	width: 40%;
+	min-width: 400px;
+	padding: var(--medium-increment);
+	margin-left: auto;
+	margin-right: auto;
+	left: 0;
+	right: 0;
+	/* Ensuring that this will always be seen */
+	z-index: 72;
+	text-align: center;
+
+	animation-name: servermessage;
+	animation-duration: 0.7s;
+	animation-fill-mode: forwards;
+
+	cursor: default;
+
+	--server-error-color: #c76969;
+	--server-success-color: #69c782;
+}
+
+@keyframes servermessage {
+	from {
+		bottom: -20%;
+	}
+
+	to {
+		bottom: 2%;
+	}
+}
+
+.server-message {
+	font-size: 1.5em;
+}
+
+.server-message-error {
+	background: var(--server-error-color);
+}
+
+.server-message-success {
+	background: var(--server-success-color);
+}

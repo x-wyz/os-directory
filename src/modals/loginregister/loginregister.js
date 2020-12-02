@@ -4,6 +4,7 @@ import './loginregister.css';
 import ModalBase from '../../components/modalbase/modalbase';
 import InputField from '../../components/inputfield/inputfield';
 import Button from '../../components/button/button';
+import ServerMessage from '../../components/servermessage/servermessage';
 
 class LoginRegister extends Component {
 	constructor(props){
@@ -16,7 +17,10 @@ class LoginRegister extends Component {
 			registerUsername: '',
 			registerEmail: '',
 			registerPassword: '',
-			registerPasswordConfirm: ''
+			registerPasswordConfirm: '',
+
+			servermessage: 'null',
+			servererror: false
 		}
 		this.swap = this.swap.bind(this);
 		this.submitRegister = this.submitRegister.bind(this);
@@ -53,7 +57,7 @@ class LoginRegister extends Component {
 		return (
 			<form className="loginmodal-login-form" onSubmit={this.submitLogin}>
 				<InputField label="Email" onChange={this.update} value={loginEmail} name="loginEmail" type="text" />
-				<InputField label="Password" onChange={this.update} value={loginPassword} name="loginPassword" type="text" />
+				<InputField label="Password" onChange={this.update} value={loginPassword} name="loginPassword" type="password" />
 				<Button text="Sign In" className="loginmodal-submit-button" type="submit"/>
 			</form>
 		)
@@ -73,23 +77,32 @@ class LoginRegister extends Component {
 	}
 
 	render(){
-		const { login } = this.state;
+		const { login, servermessage } = this.state;
 		return (
-			<ModalBase exitFunction={this.props.close}>
-				<div className="loginmodal-content-container">
-					<div className="loginmodal-header">
-						<div onClick={() => this.swap(true)} className={`loginmodal-title loginmodal-login-header ${login ? 'current-loginmodal-title' : 'not-current-loginmodal-title'}`}>Login</div>
-						<div onClick={() => this.swap(false)} className={`loginmodal-title ${!login ? 'current-loginmodal-title' : 'not-current-loginmodal-title'}`}>Register</div>
+			<div className="loginregister-hidden-overflow">
+				<ModalBase exitFunction={this.props.close}>
+					<div className="loginmodal-content-container">
+						<div className="loginmodal-header">
+							<div onClick={() => this.swap(true)} className={`loginmodal-title loginmodal-login-header ${login ? 'current-loginmodal-title' : 'not-current-loginmodal-title'}`}>Login</div>
+							<div onClick={() => this.swap(false)} className={`loginmodal-title ${!login ? 'current-loginmodal-title' : 'not-current-loginmodal-title'}`}>Register</div>
+						</div>
+						{
+							login
+							?
+							this.loginContent()
+							:
+							this.registerContent()
+						}
 					</div>
-					{
-						login
-						?
-						this.loginContent()
-						:
-						this.registerContent()
-					}
-				</div>
-			</ModalBase>
+				</ModalBase>
+				{
+					servermessage
+					?
+					<ServerMessage message={servermessage} error={this.state.servererror} />
+					:
+					null
+				}
+			</div>
 		)
 	}
 }

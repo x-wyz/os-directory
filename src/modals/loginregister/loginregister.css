@@ -38,3 +38,9 @@
 .not-current-loginmodal-title {
 	border: 3px solid #898989;
 }
+
+.loginregister-hidden-overflow {
+	height: 100vh;
+	position: relative;
+	overflow-y: hidden;
+}
