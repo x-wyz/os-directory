@@ -9,7 +9,7 @@ function InputField({ label, onChange, className, type, value, errorChecker, err
 	}
 
 	return (
-		<div className="inputfield-container">
+		<div className={`inputfield-container ${className}`}>
 			{
 				label ? <label className="inputfield-label"> { label } </label> : null
 			}

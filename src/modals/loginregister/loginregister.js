@@ -19,7 +19,7 @@ class LoginRegister extends Component {
 			registerPassword: '',
 			registerPasswordConfirm: '',
 
-			servermessage: 'null',
+			servermessage: null,
 			servererror: false
 		}
 		this.swap = this.swap.bind(this);

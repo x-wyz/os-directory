@@ -30,13 +30,13 @@
 }
 
 .current-loginmodal-title {
-	color:white;
-	background: var(--dark-gray);
-	border: 3px solid var(--dark-gray);
+	border: 3px solid #898989;
 }
 
 .not-current-loginmodal-title {
-	border: 3px solid #898989;
+	background: var(--dark-gray);
+	color: white;
+	border: 3px solid var(--dark-gray);
 }
 
 .loginregister-hidden-overflow {

@@ -4,6 +4,9 @@ import { Switch, Route } from 'react-router-dom';
 
 import Navbar from './components/navbar/navbar';
 
+// Pages
+import SearchPage from './pages/searchpage/searchpage';
+
 class App extends Component {
 	constructor(props){
 		super(props);
@@ -29,7 +32,7 @@ class App extends Component {
 			<div className="App">
 				<Navbar />
 			    <Switch>
-
+			    	<Route path="/search" component={SearchPage} />
 			    </Switch>
 		    </div>
 		)
