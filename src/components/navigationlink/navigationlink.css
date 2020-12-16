@@ -27,6 +27,7 @@
 }
 
 .nav-item-icon {
+	display: block;
+	margin: 0 auto;
 	position: relative;
-	left: 5px;
 }

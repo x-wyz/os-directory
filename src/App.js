@@ -12,7 +12,9 @@ class App extends Component {
 		super(props);
 
 		this.state = {
-			user: null
+			user: {
+				name:''
+			}
 		}
 
 		this.login = this.login.bind(this);
@@ -28,9 +30,10 @@ class App extends Component {
 	}
 
 	render(){
+		const { user } = this.state;
 		return (
 			<div className="App">
-				<Navbar />
+				<Navbar user={user} logoff={this.logoff} />
 			    <Switch>
 			    	<Route path="/search" component={SearchPage} />
 			    </Switch>

@@ -9,7 +9,7 @@
 	min-width: 50px;
 	background: var(--color-mist-secondary);
 	padding: 0.5em 0;
-	height: 320px;
+	min-height: 320px;
 	border-radius: 1%;
 	border: 3px solid var(--color-mist-quaternary);
 }
