@@ -35,10 +35,12 @@ class App extends Component {
 		return (
 			<div className="App">
 				<Navbar user={user} logoff={this.logoff} />
-			    <Switch>
-			    	<Route path="/search" component={SearchPage} />
-			    	<Route path="/messages" component={Messages} />
-			    </Switch>
+				<div className="content">
+				    <Switch>
+				    	<Route path="/search" component={SearchPage} />
+				    	<Route path="/messages" component={Messages} />
+				    </Switch>
+				</div>
 		    </div>
 		)
 	}

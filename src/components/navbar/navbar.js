@@ -39,7 +39,7 @@ class Navbar extends Component {
 						? 
 						<React.Fragment>
 							<NavigationLink icon={faComments} link="/messages" iconClass="message-ico" text="Messages" />
-							<NavigationLink icon={faProjectDiagram} link="/userprojects" iconClass="project-ico" text="Userprojects" />
+							<NavigationLink icon={faProjectDiagram} link="/projects" iconClass="project-ico" text="Projects" />
 							<NavigationLink icon={faUser} link="/profile" iconClass="profile-ico" text="Profile" />
 							<NavigationLink onClick={this.props.logoff} icon={signOut} text="Sign out" link="#" iconClass="signout-ico" addText={true} />
 						</React.Fragment>

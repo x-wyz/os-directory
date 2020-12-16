@@ -2,16 +2,16 @@
 	position: fixed;
 	top: 0;
 	left: 0;
+	bottom: 0;
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
 	align-items: center;
-	min-width: 50px;
+	width: 153px;
 	background: var(--color-mist-secondary);
 	padding: 0.5em 0;
 	min-height: 320px;
 	border-right: 3px solid var(--color-mist-quaternary);
-	border-bottom: 3px solid var(--color-mist-quaternary);
 }
 
 .nav-item-text {
