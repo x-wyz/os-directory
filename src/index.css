@@ -17,7 +17,8 @@
   --color-dark-blue: rgb(71,124,179);
   --color-dark-blue-secondary: rgb(92,152,214);
 
-  --color-green: rgb(4, 105, 4);
+  --color-green: #55b66e;
+  --color-green-secondary: #4ba362;
 
   --small-increment: 0.4em;
   --medium-increment: 0.8em;

@@ -44,3 +44,10 @@
 .searchpage-header-searchinput:focus {
 	border-color: var(--searchpage-button-bg);
 }
+
+.searchpage-results {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: flex-start;
+	align-content: flex-start;
+}

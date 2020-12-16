@@ -1,0 +1,31 @@
+.search-preview-container {
+	width: 48%;
+	max-height: 200px;
+	overflow-y: auto;
+	cursor: pointer;
+	background: var(--color-mist-secondary);
+	padding: var(--medium-increment);
+	margin: var(--medium-increment) 1%;
+}
+
+.search-preview-title {
+	font-weight: 800;
+	font-size: 1.3em;
+}
+
+.search-preview-title-type {
+	font-size: 0.9em;
+	text-transform: uppercase;
+	position: relative;
+	bottom: 0.1em;
+	color: #af055c;
+}
+
+.search-preview-owner {
+	font-size: 0.9em;
+}
+
+.search-preview-body {
+	font-size: 1.03em;
+	line-height: 125%;
+}
