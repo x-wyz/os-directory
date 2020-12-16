@@ -93,3 +93,7 @@
 .previewpage-join-btn:hover {
 	background: var(--color-green-secondary);
 }
+
+.previewpage-members-number {
+	color: var(--color-green);
+}

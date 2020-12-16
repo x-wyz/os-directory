@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 
 import Button from '../../components/button/button';
 
+import Confirmation from '../../modals/confirmation/confirmation';
+
 import './previewpage.css';
 
 class PreviewPage extends Component {
@@ -34,98 +36,116 @@ class PreviewPage extends Component {
 				otherinfo: 'Donec ante nulla, auctor eu mauris nec, tincidunt varius risus. Aenean nec vehicula ipsum. Curabitur bibendum eros odio, tempor malesuada augue fringilla at.',
 				created: '12-20-2020',
 				id: '123d1d-321'
-			}
+			},
+			showModal: false
 		}
 
-		this.apply = this.apply.bind(this);
+		this.submit = this.submit.bind(this);
+		this.showModal = this.showModal.bind(this);
 	}
 
-	apply(){
+	showModal(state){
+		this.setState({
+			showModal: state
+		})
+	}
+
+	submit(){
 		// function will send join req to server, soon tm
 	}
 
 	render(){
 		const { title, description, owner, status, otherinfo, created, links, requirements, members, type, details } = this.state.preview;
+		const { showModal } = this.state;
 		return (
-			<div className="previewpage-container">
-				<div className="previewpage-left">
-					<div className="previewpage-section">
-						<h2 className="previewpage-title">{title}</h2>
-					</div>
-					<div className="previewpage-section">
-						<p className="previewpage-description">{description}</p>
-					</div>
-					{
-						details
-						?
-						<React.Fragment>
-							{
-								details.map((detail, idx) => (
-									<div className="previewpage-section">
-										<span className="previewpage-detail-title">{detail[0]}</span>
-										<p className="previewpage-detail-description">{detail[1]}</p>
-									</div>
-								))
-							}
-						</React.Fragment>
-						:
-						null
-					}
-					{
-						requirements
-						?
+			<React.Fragment>
+				{
+					showModal
+					?
+					<Confirmation title={title} message={`Are you sure you want to ${status.toLowerCase() === 'public' ? 'join' : 'apply to'} ${title}?`} confirm={this.submit} exit={() => this.showModal(false)} />
+					:
+					null
+				}
+				<div className="previewpage-container">
+					<div className="previewpage-left">
 						<div className="previewpage-section">
-							<h3 className="previewpage-reqtitle">Requirements</h3>
-							{
-								requirements.map((req, idx) => (
-									<div className="previewpage-req-container">
-									- {requirements[idx]}
-									</div>
-								))
-							}
+							<h2 className="previewpage-title">{title}</h2>
 						</div>
-						:
-						null
-					}
-					{
-						otherinfo
-						? 
 						<div className="previewpage-section">
-							<p className="previewpage-others">{otherinfo}</p>
+							<p className="previewpage-description">{description}</p>
 						</div>
-						:
-						null
-					}
-				</div>
-				<div className="previewpage-right">
-					<div className="previewpage-mini-section">
-						<p className="previewpage-type">Type: <span className="previewpage-info-bold">{type ? type : 'Project'}</span> </p>
-						<p className="previewpage-state">Opened: <span className={`previewpage-info-bold ${status.toLowerCase() === 'public' ? 'preview-open' : 'preview-closed'}`}>{status}</span></p>
-						<p className="previewpage-createdon">cc: <span className="previewpage-info-bold">{created}</span></p>
+						{
+							details
+							?
+							<React.Fragment>
+								{
+									details.map((detail, idx) => (
+										<div className="previewpage-section">
+											<span className="previewpage-detail-title">{detail[0]}</span>
+											<p className="previewpage-detail-description">{detail[1]}</p>
+										</div>
+									))
+								}
+							</React.Fragment>
+							:
+							null
+						}
+						{
+							requirements
+							?
+							<div className="previewpage-section">
+								<h3 className="previewpage-reqtitle">Requirements</h3>
+								{
+									requirements.map((req, idx) => (
+										<div className="previewpage-req-container">
+										- {requirements[idx]}
+										</div>
+									))
+								}
+							</div>
+							:
+							null
+						}
+						{
+							otherinfo
+							? 
+							<div className="previewpage-section">
+								<p className="previewpage-others">{otherinfo}</p>
+							</div>
+							:
+							null
+						}
 					</div>
-					<div className="previewpage-mini-section">
-						<p className="previewpage-members">Members: <span className="previewpage-info-bold">{members}</span> </p>
-						<p className="previewpage-members">Owner: {owner}</p>
-					</div>
-					{
-						links
-						?
+					<div className="previewpage-right">
 						<div className="previewpage-mini-section">
-							{
-								links.map((link, idx) => (
-									<div className="previewpage-link-container">
-										<a className="previewpage-link" href={`https://${link[1]}`}>{link[0]}</a>
-									</div>
-								))
-							}
+							<p className="previewpage-type">Type: <span className="previewpage-info-bold">{type ? type : 'Project'}</span> </p>
+							<p className="previewpage-state">Opened: <span className={`previewpage-info-bold ${status.toLowerCase() === 'public' ? 'preview-open' : 'preview-closed'}`}>{status}</span></p>
+							<p className="previewpage-createdon">cc: <span className="previewpage-info-bold">{created}</span></p>
 						</div>
-						:
-						null
-					}
+						<div className="previewpage-mini-section">
+							<p className="previewpage-members">Members: <span className="previewpage-info-bold previewpage-members-number">{members}</span> </p>
+							<p className="previewpage-members">Owner: {owner}</p>
+						</div>
+						{
+							links
+							?
+							<div className="previewpage-mini-section">
+								{
+									links.map((link, idx) => (
+										<div className="previewpage-link-container">
+											<a className="previewpage-link" href={`https://${link[1]}`}>{link[0]}</a>
+										</div>
+									))
+								}
+							</div>
+							:
+							null
+						}
 
-					<Button type="submit" text={status.toLowerCase() === 'public' ? 'Join' : 'Apply'} onClick={this.apply} className="previewpage-join-btn" />
+						<Button type="submit" text={status.toLowerCase() === 'public' ? 'Join' : 'Apply'} onClick={() => this.showModal(true)} className="previewpage-join-btn" />
+					</div>
 				</div>
-			</div>
+			</React.Fragment>
 		)
 	}
 }

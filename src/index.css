@@ -19,6 +19,11 @@
 
   --color-green: #55b66e;
   --color-green-secondary: #4ba362;
+  --color-green-tertiary: #34e562;
+
+  /* to be consistant with the rest of the css variables */
+  --color-orange: orange;
+  --color-orange-secondary: #d78b00;
 
   --small-increment: 0.4em;
   --medium-increment: 0.8em;
