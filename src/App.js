@@ -6,6 +6,7 @@ import Navbar from './components/navbar/navbar';
 
 // Pages
 import SearchPage from './pages/searchpage/searchpage';
+import Messages from './pages/messages/messages';
 
 class App extends Component {
 	constructor(props){
@@ -36,6 +37,7 @@ class App extends Component {
 				<Navbar user={user} logoff={this.logoff} />
 			    <Switch>
 			    	<Route path="/search" component={SearchPage} />
+			    	<Route path="/messages" component={Messages} />
 			    </Switch>
 		    </div>
 		)

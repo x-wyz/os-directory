@@ -18,10 +18,7 @@ class SearchPage extends Component {
 				date: undefined,
 				expbb: 'early'
 			},
-			preview: {
-				type: 'Survey',
-				id: '12312-123-1-23-123'
-			},
+			preview: null,
 			results: [
 				{
 					title: 'Firebox',
@@ -127,7 +124,9 @@ class SearchPage extends Component {
 					{
 						!preview 
 						?
-						results.map(project => <PreviewResult 
+						results.map((project, idx) => <PreviewResult 
+												key={idx}
+												handler={() => this.updatePreview(project.type, project.id)}
 												title={project.title} 
 												owner={project.owner} 
 												description={project.description} 
