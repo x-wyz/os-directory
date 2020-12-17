@@ -1,0 +1,24 @@
+.profileupdater-textarea {
+	resize: none;
+	height: 120px;
+}
+
+.profileupdater-input, .profileupdater-textarea {
+	width: 100%;
+	display: block;
+	outline: none;
+	font-size: 1.2em;
+	border: 2px solid var(--color-mist-tertiary);
+	padding: var(--small-increment);
+	padding-left: var(--medium-increment);
+}
+
+.profileupdater-container {
+	width: 100%;
+}
+
+.profileupdater-label {
+	font-size: 1.1em;
+	display: block;
+	margin: calc(var(--standard-increment) / 6) 0;
+}

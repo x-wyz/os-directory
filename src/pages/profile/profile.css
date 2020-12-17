@@ -1,0 +1,43 @@
+.profilepage-basic-information {
+	width: 55%;
+	min-width: 200px;
+	background: var(--color-mist-secondary);
+	padding: var(--standard-increment);
+	margin: 20vh auto 0;
+
+}
+
+.profilepage-basic-header {
+	font-size: 1.6em;
+	margin-bottom: calc(var(--standard-increment) / 4);
+}
+
+.profilepage-change-passsword {
+	width: 20%;
+	background: var(--color-mist-secondary);
+	margin: var(--standard-increment) auto 0; 
+	min-width: 200px;
+	padding: calc(var(--small-increment) / 2);
+}
+
+.changepassword-button, .profile-update-button {
+	margin: var(--standard-increment) auto;
+	padding: var(--medium-increment);
+	width: 80%;
+	background: var(--color-orange);
+}
+
+.changepassword-button:hover {
+	background: var(--color-orange-secondary);
+}
+
+.profile-update-button {
+	width: 60%;
+	/* Ensures the smallest the button can be will be equal to the change pw btn */
+	min-width: calc(200px * .8);
+	background: var(--color-green);
+}
+
+.profile-update-button:hover {
+	background: var(--color-green-secondary);
+}

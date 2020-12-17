@@ -6,7 +6,8 @@ import Navbar from './components/navbar/navbar';
 
 // Pages
 import SearchPage from './pages/searchpage/searchpage';
-import Messages from './pages/messages/messages';
+// import Messages from './pages/messages/messages';
+import Profile from './pages/profile/profile';
 
 class App extends Component {
 	constructor(props){
@@ -38,7 +39,12 @@ class App extends Component {
 				<div className="content">
 				    <Switch>
 				    	<Route path="/search" component={SearchPage} />
-				    	<Route path="/messages" component={Messages} />
+				    	{ /* <Route path="/messages" component={Messages} /> */ }
+
+				    	<Route path="/profile">
+				    		<Profile user={user} />
+				    	</Route>
+
 				    </Switch>
 				</div>
 		    </div>
