@@ -4,7 +4,7 @@ import './profileupdater.css';
 function ProfileUpdater({ label, type, handler, name, value }){
 	return (
 		<div className="profileupdater-container">
-			<label for={name} className="profileupdater-label"> {label} </label>
+			<label htmlFor={name} className="profileupdater-label"> {label} </label>
 			{
 				type === 'text' 
 				?
