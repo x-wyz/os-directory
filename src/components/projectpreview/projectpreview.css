@@ -1,0 +1,30 @@
+.project-preview-container {
+	width: 80%;
+	margin: var(--standard-increment) auto 0;
+	padding: var(--medium-increment);
+	background: var(--color-mist-secondary);
+	position: relative;
+	transition: all 0.15s;
+	text-align: center;
+	box-shadow: 6px 6px 4px -4px rgba(0, 0, 0, 0.1);
+}
+
+.project-preview-container:hover {
+	background: #f1fbfd;
+	bottom: 2px;
+	width: 85%;
+}
+
+.project-preview-container-2 {
+	background: var(--color-mist);
+	box-shadow: 6px 6px 4px -4px rgba(0, 0, 0, 0.3);
+}
+
+.project-preview-title {
+	font-weight: bold;
+	margin-bottom: calc(var(--small-increment) / 2);
+}
+
+.project-preview-owner {
+
+}

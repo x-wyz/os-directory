@@ -1,0 +1,26 @@
+.projects-container {
+	display: flex;
+	min-height: 100vh;
+}
+
+.projects-groups {
+	width: 60%;
+	background: var(--color-light-blue-tertiary);
+}
+
+.projects-data {
+	width: 40%;
+	background: var(--color-light-blue-secondary);
+}
+
+.projects-other {
+	width: 20%;
+	background: var(--color-light-blue);
+}
+
+.projects-page-title {
+	font-size: 1.7em;
+	margin-top: var(--medium-increment);
+	text-indent: 10%;
+	font-weight: bold;
+}

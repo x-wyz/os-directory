@@ -8,6 +8,7 @@ import Navbar from './components/navbar/navbar';
 import SearchPage from './pages/searchpage/searchpage';
 // import Messages from './pages/messages/messages';
 import Profile from './pages/profile/profile';
+import Projects from './pages/projects/projects';
 
 class App extends Component {
 	constructor(props){
@@ -43,6 +44,10 @@ class App extends Component {
 
 				    	<Route path="/profile">
 				    		<Profile user={user} />
+				    	</Route>
+
+				    	<Route path="/projects">
+				    		<Projects user={user} />
 				    	</Route>
 
 				    </Switch>
