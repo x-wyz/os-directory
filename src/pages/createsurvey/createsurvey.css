@@ -17,6 +17,32 @@
 	margin-bottom: var(--medium-increment);
 }
 
+.submit-survey-button, .preview-survey-button {
+	width: 49%;
+	margin: var(--medium-increment) var(--small-increment);
+	display: block;
+	background: var(--color-green);
+	padding: var(--medium-increment);
+	font-size: 1.1em;
+}
+
+.preview-survey-button {
+	background: #a0b9ff;
+}
+
+.preview-survey-button:hover {
+	background: #8fa9f1;
+}
+
+.create-survey-buttons-container {
+	display: flex;
+	justify-content: center;
+}
+
+.submit-survey-button:hover {
+	background: var(--color-green-secondary);
+}
+
 .create-survey-controls {
 	margin: 0 auto;
 	background: var(--color-mist);
@@ -30,6 +56,19 @@
 	color: #c56c81;
 }
 
+.survey-remove-formfield-btn {
+	background: var(--color-red);
+	min-width: 150px;
+	width: 20%;
+	position: relative;
+	padding: var(--small-increment);
+
+}
+
+.survey-remove-formfield-btn:hover {
+	background: var(--color-red-secondary);
+}
+
 /*
 Using !important because im unsure of render order, as of testing it isn't 
 required but using it here for clarity, also .form-control container is from 
@@ -38,4 +77,44 @@ a diff component and but I need it here to overwrite the default one from that c
 
 .form-control-container:hover .survey-text-icon {
 	color: #c74564 !important;
+}
+
+/* Formfield styles */
+
+.survey-text-inputfield {
+	display: flex;
+	flex-direction: column;
+}
+
+.survey-field-container {
+	background: var(--color-mist);
+	margin-bottom: var(--small-increment);
+	padding: var(--medium-increment);
+}
+
+.survey-field-description, .survey-field-title {
+	border: 0;
+	outline: 0;
+	background: var(--white);
+	text-align: center;
+	display: block;
+}
+
+.survey-field-title {
+	font-size: 1.3em;
+	padding: calc(var(--small-increment) / 2);
+	margin-bottom: var(--small-increment);
+}
+
+.survey-field-description {
+	font-size: 1.1em;
+	padding: calc(var(--small-increment) / 2);
+	resize: none;
+	height: 3em;
+}
+
+.create-survey-formfield-footer {
+	display: flex;
+	justify-content: flex-end;
+	margin-top: var(--small-increment);
 }

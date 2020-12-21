@@ -39,6 +39,9 @@
 
   --shadow-1: 6px 6px 4px -4px rgba(0, 0, 0, 0.1);
   --shadow-2: 6px 6px 4px -4px rgba(0, 0, 0, 0.2);
+
+  --color-red: #fd7272;
+  --color-red-secondary: #f95959;
 }
 
 /* CSS Reset */

@@ -39,4 +39,7 @@
 .form-control-description {
 	text-transform: capitalize;
 	font-size: 1.1em;
+	width: 80%;
+	margin: 0 auto;
+	text-align: center;
 }

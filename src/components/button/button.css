@@ -9,6 +9,7 @@
 	transition: background 0.2s;
 	font-weight: bold;
 	display: block;
+	box-shadow: var(--shadow-1);
 }
 
 .button:hover {
