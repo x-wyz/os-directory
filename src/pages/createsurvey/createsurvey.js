@@ -16,29 +16,39 @@ class CreateSurvey extends Component {
 			],
 			num: 0
 		}
-		this.createSelectMulti = this.createSelectMulti.bind(this);
-		this.createSelectOne = this.createSelectOne.bind(this);
-		this.createFormField = this.createFormField.bind(this);
-
-		this.selectMulti = this.selectMulti.bind(this);
-		this.selectOne = this.selectOne.bind(this);
-		this.formfield = this.formfield.bind(this);
 
 		this.update = this.update.bind(this);
 
 		this.submit = this.submit.bind(this);
+
+		this.createfield = this.createfield.bind(this);
 	}
 
-	createSelectMulti(){
+	createfield(type){
 		const { surveyfields, num } = this.state;
-
-		surveyfields.push({
-			fieldtype: 'checkbox',
+		let newField = {
 			id: num,
-			title: 'Section header',
-			description: '',
-			options: []
-		})
+			title: "Section header",
+			description: "..."
+		}
+
+		if (type === 'formfield') {
+			newField = {
+				...newField,
+				type: 'text',
+				max: 0,
+				min: 0,
+				fieldtype: type
+			}
+		} else {
+			newField = {
+				...newField,
+				fieldtype: type,
+				options: []
+			}
+		}
+
+		surveyfields.push(newField);
 
 		this.setState({
 			surveyfields: surveyfields,
@@ -54,50 +64,12 @@ class CreateSurvey extends Component {
 		)
 	}
 
-	createSelectOne(){
-		const { surveyfields, num } = this.state;
-
-		surveyfields.push({
-			fieldtype: 'radio',
-			id: num,
-			title: 'Section header',
-			description: '',
-			options: []
-		})
-
-		this.setState({
-			surveyfields: surveyfields,
-			num: num + 1
-		})
-	}
-
 	selectOne(){
 		return (
 			<div>
 				selectone
 			</div>
 		)
-	}
-
-	createFormField(){
-		const { surveyfields, num } = this.state;
-
-		surveyfields.push({
-			fieldtype: 'formfield',
-			id: num,
-			type: 'text',
-			max: '',
-			min: '',
-			title: 'Section header',
-			description: ''
-		})
-
-		this.setState({
-			surveyfields: surveyfields,
-			num: num + 1
-		})
-
-		console.log('created form field');
 	}
 
 	formfield(){
@@ -126,9 +98,9 @@ class CreateSurvey extends Component {
 				<div className="create-survey-contents">
 					<h2 className="create-survey-title">Survey builder</h2>
 					<div className="create-survey-controls">
-						<FormControl iconClass="survey-text-icon" title="Form field" description="Text and number fields" icon={faFont} handler={this.createFormField} />
-						<FormControl title="Checkbox" description="Select multiple" icon={faCheckSquare} handler={this.createSelectMulti} />
-						<FormControl title="Radio" description="Select one" icon={faCheckCircle} handler={this.createSelectOne} />
+						<FormControl iconClass="survey-text-icon" title="Form field" description="Text and number fields" icon={faFont} handler={() => this.createfield('formfield')} />
+						<FormControl title="Checkbox" description="Select multiple" icon={faCheckSquare} handler={() => this.createfield('checkbox')} />
+						<FormControl title="Radio" description="Select one" icon={faCheckCircle} handler={() => this.createfield('radio')} />
 					</div>
 				</div>
 			</div>
