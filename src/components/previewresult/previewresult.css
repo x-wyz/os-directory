@@ -6,6 +6,11 @@
 	background: var(--color-mist-secondary);
 	padding: var(--medium-increment);
 	margin: var(--medium-increment) 1%;
+	box-shadow: var(--shadow-2);
+}
+
+.search-preview-container:hover {
+	background: #f1fbfd;
 }
 
 .search-preview-title {

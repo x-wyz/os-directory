@@ -6,9 +6,13 @@ import Navbar from './components/navbar/navbar';
 
 // Pages
 import SearchPage from './pages/searchpage/searchpage';
-// import Messages from './pages/messages/messages';
+import Messages from './pages/messages/messages';
 import Profile from './pages/profile/profile';
 import Projects from './pages/projects/projects';
+
+// only for testing and page previews
+
+import CreateSurvey from './pages/createsurvey/createsurvey';
 
 class App extends Component {
 	constructor(props){
@@ -46,10 +50,15 @@ class App extends Component {
 				    		<Profile user={user} />
 				    	</Route>
 
+				    	<Route path="/messages">
+				    		<Messages user={user} />
+				    	</Route>
+
 				    	<Route path="/projects">
 				    		<Projects user={user} />
 				    	</Route>
 
+				    	<Route path="/survey" component={CreateSurvey} />
 				    </Switch>
 				</div>
 		    </div>

@@ -1,0 +1,42 @@
+.form-control-container {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	width: 31%;
+	height: 200px;
+	background: var(--color-mist-secondary);
+	transition: all 0.25s;
+	cursor: pointer;
+	box-shadow: var(--shadow-1);
+}
+
+.form-control-container:hover .formcontrol-icon {
+	color: var(--color-green-secondary);
+}
+
+.form-control-container:hover {
+	background: var(--white);
+}
+
+.formcontrol-icon {
+	margin: calc(var(--small-increment) / 2);
+	display: block;
+	font-size: 4em;
+	color: var(--color-green);
+	transition: all 0.25s;
+}
+
+.formcontrol-icon:hover {
+	color: var(--color-green-secondary);
+}
+
+.form-control-title {
+	font-size: 1.4em;
+	font-weight: bold;
+}
+
+.form-control-description {
+	text-transform: capitalize;
+	font-size: 1.1em;
+}

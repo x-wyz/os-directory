@@ -1,0 +1,41 @@
+.createsurvey-page {
+	width: 90%;
+	margin: 0 auto;
+	padding: var(--medium-increment);
+	background: var(--color-light-blue-secondary);
+	min-height: 100vh;
+}
+
+.create-survey-contents {
+	width: 85%;
+	margin: 0 auto;
+}
+
+.create-survey-title {
+	text-align: center;
+	font-size: 2em;
+	margin-bottom: var(--medium-increment);
+}
+
+.create-survey-controls {
+	margin: 0 auto;
+	background: var(--color-mist);
+	display: flex;
+	padding: var(--medium-increment);
+	justify-content: space-around;
+	box-shadow: var(--shadow-2);
+}
+
+.survey-text-icon {
+	color: #c56c81;
+}
+
+/*
+Using !important because im unsure of render order, as of testing it isn't 
+required but using it here for clarity, also .form-control container is from 
+a diff component and but I need it here to overwrite the default one from that component
+*/
+
+.form-control-container:hover .survey-text-icon {
+	color: #c74564 !important;
+}
