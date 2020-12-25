@@ -1,4 +1,6 @@
 import React, { Component } from 'react';
+import { v4 as uuidv4 } from 'uuid';
+
 import Button from '../../components/button/button';
 import FormControl from '../../components/formcontrol/formcontrol';
 
@@ -19,13 +21,16 @@ class CreateSurvey extends Component {
 		}
 
 		this.update = this.update.bind(this);
+		this.addOption = this.addOption.bind(this);
+		this.removeOption = this.removeOption.bind(this);
+		this.updateNewOption = this.updateNewOption.bind(this);
+
 		this.submit = this.submit.bind(this);
 		this.createfield = this.createfield.bind(this);
 		this.delete = this.delete.bind(this);
 
 		// For consistency not needed.
-		this.selectMulti = this.selectMulti.bind(this);
-		this.selectOne = this.selectOne.bind(this);
+		this.selectfields = this.selectfields.bind(this);
 		this.formfield = this.formfield.bind(this);
 		// ==========
 
@@ -53,6 +58,7 @@ class CreateSurvey extends Component {
 			newField = {
 				...newField,
 				fieldtype: type,
+				ref: '',
 				options: []
 			}
 		}
@@ -66,18 +72,34 @@ class CreateSurvey extends Component {
 	}
 
 	header(formfield){
+		const { fieldtype } = formfield;
 		return (
-			<div className="survey-text-inputfield">
-				<input type="text" onChange={(event) => {
-					event.target.id = formfield.id;
-					this.update(event);
-				}} value={formfield.title} className="survey-field-title" name="title" placeholder="Header (recommended)" />
+			<div className="survey-create-header">
+				<p className={`survey-create-type ff-${fieldtype}`}>
+					{
+						fieldtype === 'radio'
+						?
+						'R'
+						:
+						fieldtype === 'checkbox'
+						?
+						'C'
+						:
+						'T'
+					}
+				</p>
+				<div className="survey-text-inputfield">
+					<input type="text" onChange={(event) => {
+						event.target.id = formfield.id;
+						this.update(event);
+					}} value={formfield.title} className="survey-field-title" name="title" placeholder="Header (recommended)" />
 
-				<textarea value={formfield.description} placeholder="Optional description..." onChange={(event) => {
-					event.target.id = formfield.id;
-					this.update(event);
-				}} name="description" className="survey-field-description" />
+					<textarea value={formfield.description} placeholder="Optional description..." onChange={(event) => {
+						event.target.id = formfield.id;
+						this.update(event);
+					}} name="description" className="survey-field-description" />
 
+				</div>
 			</div>
 		)
 	}
@@ -99,25 +121,35 @@ class CreateSurvey extends Component {
 		})
 	}
 
-	selectMulti(formfield){
+	selectfields(formfield){
+		const { options, ref, id } = formfield;
 		return (
 			<div className="survey-field-container">
 			{
 				this.header(formfield)
 			}
-			{
-				this.footer(formfield)
-			}
+			<div className="create-survey-selects-container">
+				<div className="selects-options-container">
+					{
+						options.map(option => {
+							return (
+								<div className="create-survey-option-container">
+									<Button text="Del" type="button" className="create-survey-remove-option" onClick={() => this.removeOption(id, option.id)} />
+									<p className="create-survey-option">
+										{
+											option.option
+										}
+									</p>
+								</div>
+							)
+						})
+					}
+				</div>
+				<div className="create-survey-options-input-container">
+					<input type="text" className="create-survey-create-option" onChange={(event) => this.updateNewOption(event, formfield.id)} value={ref} />
+					<Button text='Add' type="button" onClick={() => this.addOption(id)} className="create-survey-add-option-btn" />
+				</div>
 			</div>
-		)
-	}
-
-	selectOne(formfield){
-		return (
-			<div className="survey-field-container">
-			{
-				this.header(formfield)
-			}
 			{
 				this.footer(formfield)
 			}
@@ -157,14 +189,69 @@ class CreateSurvey extends Component {
 
 	}
 
+	addOption(id){
+		let { surveyfields } = this.state;
+		let currentOptions = surveyfields.filter(field => field.id == id)[0];
+
+		currentOptions.options.push({
+			option: currentOptions.ref,
+			id: uuidv4()
+		})
+
+		currentOptions.ref = '';
+
+		surveyfields = surveyfields.map(field => {
+			if (field.id == id) {
+				return currentOptions;
+			}
+			else {
+				return field;
+			}
+		})
+
+		this.setState({surveyfields});
+	}
+
+	updateNewOption(event, id){
+		let { surveyfields } = this.state;
+		let currentNewOption = surveyfields.filter(field => field.id == id)[0];
+		currentNewOption.ref = event.target.value;
+		surveyfields = surveyfields.map(field => {
+			if (field.id == id) {
+				return currentNewOption;
+			}
+			else {
+				return field;
+			}
+		})
+
+		this.setState({surveyfields});
+	}
+
+	removeOption(id, optId){
+		let { surveyfields } = this.state;
+		let updateSurveyFields = surveyfields.filter(field => field.id == id)[0];
+		updateSurveyFields.options = updateSurveyFields.options.filter(option => option.id != optId);
+
+		surveyfields = surveyfields.map(field => {
+			if (field.id == id){
+				return updateSurveyFields;
+			}
+			else {
+				return field;
+			}
+		})
+
+		this.setState({surveyfields});
+
+	}
+
 	submit(event){
 		event.preventDefault();
 	}
 
 	render(){
 		const { surveyfields } = this.state;
-
-		console.log(this.state);
 
 		return (
 			<div className="createsurvey-page">
@@ -176,10 +263,10 @@ class CreateSurvey extends Component {
 								return this.formfield(field);
 							}
 							else if (field.fieldtype === 'radio') {
-								return this.selectMulti(field);
+								return this.selectfields(field);
 							}
 							else if (field.fieldtype === 'checkbox') {
-								return this.selectOne(field);
+								return this.selectfields(field);
 							}
 						})
 					}

@@ -12,42 +12,49 @@ class Messages extends Component {
 			messages: [
 				{
 					sender: 'AcerS',
+					title: 'firebox news',
 					sent: '1-22-2020',
 					basis: 'Firebox',
 					message: 'Vivamus a lacinia mauris, id malesuada massa. Pellentesque ut cursus mauris. Donec at dui ut ante tempus tincidunt. Nunc porttitor vulputate urna, et blandit est convallis ut.'
 				},
 				{
 					sender: 'AcerS',
+					title: 'firebox news',
 					sent: '1-22-2020',
 					basis: 'Firebox',
 					message: 'Vivamus a lacinia mauris, id malesuada massa. Pellentesque ut cursus mauris. Donec at dui ut ante tempus tincidunt. Nunc porttitor vulputate urna, et blandit est convallis ut.'
 				},
 				{
 					sender: 'AcerS',
+					title: 'firebox news',
 					sent: '1-22-2020',
 					basis: 'Firebox',
 					message: 'Vivamus a lacinia mauris, id malesuada massa. Pellentesque ut cursus mauris. Donec at dui ut ante tempus tincidunt. Nunc porttitor vulputate urna, et blandit est convallis ut.'
 				},
 				{
 					sender: 'AcerS',
+					title: 'firebox news',
 					sent: '1-22-2020',
 					basis: 'Firebox',
 					message: 'Vivamus a lacinia mauris, id malesuada massa. Pellentesque ut cursus mauris. Donec at dui ut ante tempus tincidunt. Nunc porttitor vulputate urna, et blandit est convallis ut.'
 				},
 				{
 					sender: 'AcerS',
+					title: 'firebox news',
 					sent: '1-22-2020',
 					basis: 'Firebox',
 					message: 'Vivamus a lacinia mauris, id malesuada massa. Pellentesque ut cursus mauris. Donec at dui ut ante tempus tincidunt. Nunc porttitor vulputate urna, et blandit est convallis ut.'
 				},
 				{
 					sender: 'AcerS',
+					title: 'firebox news',
 					sent: '1-22-2020',
 					basis: 'Firebox',
 					message: 'Vivamus a lacinia mauris, id malesuada massa. Pellentesque ut cursus mauris. Donec at dui ut ante tempus tincidunt. Nunc porttitor vulputate urna, et blandit est convallis ut.'
 				},
 				{
 					sender: 'AcerS',
+					title: 'firebox news',
 					sent: '1-22-2020',
 					basis: 'Firebox',
 					message: 'Vivamus a lacinia mauris, id malesuada massa. Pellentesque ut cursus mauris. Donec at dui ut ante tempus tincidunt. Nunc porttitor vulputate urna, et blandit est convallis ut.'
@@ -61,9 +68,12 @@ class Messages extends Component {
 
 		return (
 			<div className="messages-container">
-				{
-					messages.map((message,idx) => <MessagePreview sender={message.sender} basis={message.basis} sent={message.sent} message={message.message} />)
-				}
+				<h2 className="messages-title">Messages</h2>
+				<div className="messages-preview-container">
+					{
+						messages.map((message,idx) => <MessagePreview key={idx} title={message.title} sender={message.sender} basis={message.basis} sent={message.sent} message={message.message} />)
+					}
+				</div>
 			</div>
 		)
 	}

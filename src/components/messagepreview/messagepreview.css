@@ -1,0 +1,22 @@
+.messagepreview-container {
+	background: var(--color-mist-secondary);
+	padding: var(--medium-increment);
+	width: 46%;
+	margin: var(--small-increment);
+	box-shadow: var(--shadow-1);
+	cursor: pointer;
+}
+
+.messagepreview-title {
+	font-size: 1.2em;
+	font-weight: bold;
+}
+
+.messagepreview-sender {
+	font-size: 0.8em;
+}
+
+.messagepreview-datesent {
+	font-size: 0.8em;
+}
+
