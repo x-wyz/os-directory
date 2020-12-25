@@ -1,0 +1,9 @@
+.selectinput {
+	outline: none;
+	border: none;
+	width: 100%;
+	padding: var(--medium-increment);
+	font-size: 1em;
+	text-transform: capitalize;
+	display: block;
+}

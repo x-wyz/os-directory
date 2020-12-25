@@ -21,6 +21,8 @@ class CreateSurvey extends Component {
 		}
 
 		this.update = this.update.bind(this);
+		this.updateNum = this.updateNum.bind(this);
+		this.updateType = this.updateType.bind(this);
 		this.addOption = this.addOption.bind(this);
 		this.removeOption = this.removeOption.bind(this);
 		this.updateNewOption = this.updateNewOption.bind(this);
@@ -158,11 +160,32 @@ class CreateSurvey extends Component {
 	}
 
 	formfield(formfield){
+		const { id, max, min } = formfield;
 		return (
 			<div className="survey-field-container">
 			{
 				this.header(formfield)
 			}
+			<div className="selects-options-container selects-options-formfield">
+				<div className="create-survey-formfield-options">
+					<SelectInput options={['text', 'number']} handler={(type) => {
+						this.updateType(id, type);
+					}} />
+				</div>
+				{
+					formfield.type === 'number'
+					?
+					<div className="create-survey-numberfield">
+						<label for={`create-survey-min-${id}`} className="create-survey-number-label">Min: </label>
+						<input onChange={(event) => this.updateNum(event, id)} id={`create-survey-min-${id}`} type="number" max={max} value={min} className="create-survey-number-input" name="min" />
+
+						<label for={`create-survey-max-${id}`} className="create-survey-number-label">Max: </label>
+						<input onChange={(event) => this.updateNum(event, id)} id={`create-survey-max-${id}`} type="number" min={min} value={max} className="create-survey-number-input" name="max" />
+					</div>
+					:
+					null
+				}
+			</div>
 			{
 				this.footer(formfield)
 			}
@@ -246,13 +269,43 @@ class CreateSurvey extends Component {
 
 	}
 
+	updateType(id, type){
+		let { surveyfields } = this.state;
+
+		surveyfields = surveyfields.map(field => {
+			if (field.id == id){
+				field.type = type;
+				return field;
+			}
+			else {
+				return field;
+			}
+		})
+
+		this.setState({surveyfields})
+	}
+
+	updateNum(event, id){
+		let { surveyfields } = this.state;
+		surveyfields = surveyfields.map(field => {
+			if (field.id == id) {
+				field[event.target.name] = event.target.value;
+				return field;
+			}
+			else {
+				return field;
+			}
+		})
+		this.setState({surveyfields});
+	}
+
 	submit(event){
 		event.preventDefault();
 	}
 
 	render(){
 		const { surveyfields } = this.state;
-
+		console.log(surveyfields)
 		return (
 			<div className="createsurvey-page">
 				<div className="create-survey-contents">
