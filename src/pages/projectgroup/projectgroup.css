@@ -1,0 +1,149 @@
+
+
+.group-container {
+	display: flex;
+}
+
+.group-tasks-container, .group-messages-container, .group-information-container {
+	height: 100vh;
+	background: var(--color-light-blue);
+
+	/* will probably change this in the future which is why i'm doing this instead of adding directly */
+	--group-border: var(--color-light-blue-tertiary);
+}
+
+.group-tasks-container, .group-messages-container, .group-links-container, .group-users {
+	padding: var(--medium-increment);
+	box-sizing: border-box;
+}
+
+.group-tasks-container {
+	width: 30%;
+	border-right: 4px solid var(--color-light-blue-tertiary);
+}
+
+.group-messages-container {
+	width: 50%;
+	background: var(--color-light-blue-secondary);
+	border-right: 4px solid var(--color-light-blue-tertiary);
+}
+
+.group-information-container {
+	width: 20%;
+}
+
+.group-section-heading {
+	font-size: 1.6em;
+	letter-spacing: 0.1em;
+	font-weight: bold;
+	color: #2e2d33;
+	opacity: 0.9;
+}
+
+.group-users {
+	height: 70%;
+	border-bottom: 4px solid var(--color-light-blue-tertiary);
+}
+
+.group-links-container {
+	height: 30%;
+}
+
+/* ------- */
+
+.group-user {
+	font-size: 1.2em;
+	width: 80%;
+	background: var(--blueish-white);
+	padding: var(--small-increment);
+	margin: 0.3em auto;
+	text-align: center;
+}
+
+.group-link {
+	display: block;
+	background: #3c3c3c;
+	color: white;
+	padding: var(--medium-increment);
+	text-align: center;
+	width: 80%;
+	margin: var(--small-increment) auto;
+}
+
+.group-message {
+	display: flex;
+	flex-direction: column;
+	padding: 0.6em;
+	background: #f3f9ff;
+	box-shadow: var(--shadow-1);
+	margin: var(--small-increment) auto;
+	width: 95%;
+	box-sizing: border-box;
+}
+
+.group-message-header {
+	display: flex;
+	font-size: 0.8em;
+}
+
+.group-at {
+	font-size: 0.8em;
+	vertical-align: middle;
+}
+
+.group-message-sender {
+	cursor: pointer;
+}
+
+.group-task-footer {
+	display: flex;
+	border-top: 2px solid var(--group-border-color);
+	box-sizing: border-box;
+}
+
+.group-task {
+	display: flex;
+	flex-direction: column;
+	box-sizing: border-box;
+	border: 2px solid var(--group-border-color);
+	margin: var(--medium-increment) auto;
+	width: 80%;
+	border-radius: 4px;
+	cursor: pointer;
+
+	--group-border-color: #3a3a3a;
+}
+
+.group-task-users-count {
+	width: 40%;
+	text-align: center;
+	padding: 0.6em;
+	border-right: 2px solid var(--group-border-color);
+}
+
+.group-task-messages-count {
+	width: 60%;
+	margin: 0 auto;
+	text-align: center;
+	padding: 0.6em;
+}
+
+.group-task-text {
+	padding: var(--medium-increment);
+	width: 100%;
+	text-align: center;
+}
+
+.group-task-status {
+	text-transform: uppercase;
+	font-weight: bold;
+	padding: var(--small-increment);
+}
+
+.task-status-active {
+	background: #88df9e;
+}
+
+.task-status-archive {
+	background: #b4b3c3;
+}

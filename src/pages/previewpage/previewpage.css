@@ -53,7 +53,7 @@
 /* right */
 
 .previewpage-mini-section {
-	background: #e9f7fa;
+	background: var(--white);
 	padding: var(--medium-increment);
 	width: 90%;
 	margin: var(--medium-increment) auto;
@@ -97,3 +97,5 @@
 .previewpage-members-number {
 	color: var(--color-green);
 }
+
+

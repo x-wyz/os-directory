@@ -13,6 +13,7 @@ import Projects from './pages/projects/projects';
 // only for testing and page previews
 
 import CreateSurvey from './pages/createsurvey/createsurvey';
+import ProjectGroup from './pages/projectgroup/projectgroup';
 
 class App extends Component {
 	constructor(props){
@@ -44,7 +45,6 @@ class App extends Component {
 				<div className="content">
 				    <Switch>
 				    	<Route path="/search" component={SearchPage} />
-				    	{ /* <Route path="/messages" component={Messages} /> */ }
 
 				    	<Route path="/profile">
 				    		<Profile user={user} />
@@ -59,6 +59,7 @@ class App extends Component {
 				    	</Route>
 
 				    	<Route path="/survey" component={CreateSurvey} />
+				    	<Route path="/group" component={ProjectGroup} />
 				    </Switch>
 				</div>
 		    </div>
