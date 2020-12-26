@@ -82,6 +82,11 @@
 	margin: calc(var(--small-increment) / 2);
 	font-size: 1.2em;
 	padding: var(--small-increment);
+	transition: background 0.2s;
+}
+
+.previewpage-link:hover {
+	background: #575757;
 }
 
 .previewpage-join-btn {

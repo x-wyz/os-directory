@@ -2,14 +2,15 @@
 
 .group-container {
 	display: flex;
+	/* will probably change this in the future which is why i'm doing this instead of adding directly */
+	--group-border: var(--color-light-blue-tertiary);
+
+	--group-border-color: #3a3a3a;
 }
 
 .group-tasks-container, .group-messages-container, .group-information-container {
 	height: 100vh;
 	background: var(--color-light-blue);
-
-	/* will probably change this in the future which is why i'm doing this instead of adding directly */
-	--group-border: var(--color-light-blue-tertiary);
 }
 
 .group-tasks-container, .group-messages-container, .group-links-container, .group-users {
@@ -38,6 +39,7 @@
 	font-weight: bold;
 	color: #2e2d33;
 	opacity: 0.9;
+	max-height: 3vh;
 }
 
 .group-users {
@@ -58,6 +60,7 @@
 	padding: var(--small-increment);
 	margin: 0.3em auto;
 	text-align: center;
+	cursor: pointer;
 }
 
 .group-link {
@@ -68,6 +71,11 @@
 	text-align: center;
 	width: 80%;
 	margin: var(--small-increment) auto;
+	transition: background 0.2s;
+}
+
+.group-link:hover {
+	background: #575757;
 }
 
 .group-message {
@@ -99,6 +107,7 @@
 	display: flex;
 	border-top: 2px solid var(--group-border-color);
 	box-sizing: border-box;
+	cursor: auto;
 }
 
 .group-task {
@@ -110,8 +119,6 @@
 	width: 80%;
 	border-radius: 4px;
 	cursor: pointer;
-
-	--group-border-color: #3a3a3a;
 }
 
 .group-task-users-count {
@@ -146,4 +153,71 @@
 
 .task-status-archive {
 	background: #b4b3c3;
+}
+
+.task-status-active .group-task-body {
+	background: #65df84;
+}
+
+.task-status-archive .group-task-body {
+	background: #a3a2b0;
+}
+
+/* new messages form */
+
+.group-messages-body {
+	height: 85%;
+	overflow-y: scroll;
+}
+
+.group-messages-footer {
+	height: 8%;
+	min-height: 50px;
+	display: flex;
+	width: 80%;
+	margin: 0 0 0 auto;
+	margin-top: var(--medium-increment);
+}
+
+.group-new-message {
+	resize: none;
+	width: 80%;
+	border: 0;
+	box-sizing: border-box;
+	border: 3px solid var(--group-border-color);
+	border-right: 0;
+	outline: 0;
+	padding: var(--medium-increment);
+	font-size: 0.9em;
+}
+
+.group-send-message-button {
+	width: 20%;
+	box-shadow: 0 !important;
+	background: var(--group-border-color);
+	border-left: 0;
+	text-transform: uppercase;
+	border: 3px solid var(--group-border-color);
+	border-left: 0;
+	color: var(--white);
+}
+
+.group-send-message-button:hover {
+	background: #575757;
+}
+
+.group-overflow-container {
+	overflow-y: scroll;
+}
+
+.group-task-height {
+	height: 98%;
+}
+
+.group-users-height {
+	height: 95%;
+}
+
+.group-links-height {
+	height: 90%;
 }

@@ -142,7 +142,6 @@ class ProjectGroup extends Component {
 							name: 'user10'
 						}
 					],
-					newmessage: ""
 				},
 				{
 					task: 'Donec consequat odio vitae diam laoreet',
@@ -168,7 +167,8 @@ class ProjectGroup extends Component {
 						}
 					]
 				},
-			]
+			],
+			newmessage: ""
 		}
 
 		this.grouptask = this.grouptask.bind(this);
@@ -193,8 +193,10 @@ class ProjectGroup extends Component {
 	grouptask(task){
 		return (
 			<div className={`group-task task-status-${task.status}`}>
-				<h4 className="group-task-status">{task.status}</h4>
-				<p className="group-task-text">{task.task}</p>
+				<div className="group-task-body">
+					<h4 className="group-task-status">{task.status}</h4>
+					<p className="group-task-text">{task.task}</p>
+				</div>
 				<div className="group-task-footer">
 					<p className="group-task-users-count">Users: {task.users.length}</p>
 					<p className="group-task-messages-count">Messages: {task.messages.length}</p>
@@ -221,34 +223,46 @@ class ProjectGroup extends Component {
 	}
 
 	render(){
-		const { internallinks, users, tasks, messages } = this.state;
+		const { internallinks, users, tasks, messages, newmessage } = this.state;
 
 		return (
 			<div className="group-container">
 				<div className="group-tasks-container">
 					<h3 className="group-section-heading">Tasks</h3>
-					{
-						tasks.map(task => this.grouptask(task))
-					}
+					<div className="group-overflow-container group-task-height">
+						{
+							tasks.map(task => this.grouptask(task))
+						}
+					</div>
 				</div>
 				<div className="group-messages-container">
 					<h3 className="group-section-heading">Messages</h3>
-					{
-						messages.map(message => this.groupmessage(message))
-					}
+					<div className="group-messages-body">
+						{
+							messages.map(message => this.groupmessage(message))
+						}
+					</div>
+					<div className="group-messages-footer">
+						<textarea type="text" onChange={this.update} name="newmessage" value={newmessage} className="group-new-message" />
+						<Button type="button" text="send" onClick={this.sendMessage} className="group-send-message-button" />
+					</div>
 				</div>
 				<div className="group-information-container">
 					<div className="group-users">
 						<h3 className="group-section-heading">Users</h3>
-						{
-							users.map(user => this.groupuser(user))
-						}
+						<div className="group-overflow-container group-users-height">
+							{
+								users.map(user => this.groupuser(user))
+							}
+						</div>
 					</div>
 					<div className="group-links-container">
 						<h3 className="group-section-heading">Links</h3>
-						{
-							internallinks.map(link => this.grouplink(link))
-						}
+						<div className="group-overflow-container group-links-height">
+							{
+								internallinks.map(link => this.grouplink(link))
+							}
+						</div>
 					</div>
 				</div>
 			</div>
