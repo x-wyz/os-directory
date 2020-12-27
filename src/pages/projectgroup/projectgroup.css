@@ -84,7 +84,7 @@
 	padding: 0.6em;
 	background: #f3f9ff;
 	box-shadow: var(--shadow-1);
-	margin: var(--small-increment) auto;
+	margin: 0 auto var(--small-increment) auto;
 	width: 95%;
 	box-sizing: border-box;
 }
@@ -116,8 +116,8 @@
 	box-sizing: border-box;
 	border: 2px solid var(--group-border-color);
 	margin: var(--medium-increment) auto;
-	width: 80%;
-	border-radius: 4px;
+	width: 85%;
+	border-radius: 2px;
 	cursor: pointer;
 }
 
@@ -145,6 +145,7 @@
 	text-transform: uppercase;
 	font-weight: bold;
 	padding: var(--small-increment);
+	padding-bottom: 0;
 }
 
 .task-status-active {
@@ -168,15 +169,16 @@
 .group-messages-body {
 	height: 85%;
 	overflow-y: scroll;
+	margin-top: var(--medium-increment);
 }
 
 .group-messages-footer {
-	height: 8%;
+	height: 6%;
 	min-height: 50px;
 	display: flex;
 	width: 80%;
 	margin: 0 0 0 auto;
-	margin-top: var(--medium-increment);
+	margin-top: var(--standard-increment);
 }
 
 .group-new-message {
