@@ -17,6 +17,8 @@ class CreateSurvey extends Component {
 		this.state = {
 			surveyfields: [
 			],
+			surveytitle: '',
+			surveyintroduction: '',
 			num: 0
 		}
 
@@ -26,6 +28,8 @@ class CreateSurvey extends Component {
 		this.addOption = this.addOption.bind(this);
 		this.removeOption = this.removeOption.bind(this);
 		this.updateNewOption = this.updateNewOption.bind(this);
+
+		this.updateIntroduction = this.updateIntroduction.bind(this);
 
 		this.submit = this.submit.bind(this);
 		this.createfield = this.createfield.bind(this);
@@ -212,6 +216,12 @@ class CreateSurvey extends Component {
 
 	}
 
+	updateIntroduction(event){
+		this.setState({
+			[event.target.name]:event.target.value
+		})
+	}
+
 	addOption(id){
 		let { surveyfields } = this.state;
 		let currentOptions = surveyfields.filter(field => field.id == id)[0];
@@ -304,12 +314,16 @@ class CreateSurvey extends Component {
 	}
 
 	render(){
-		const { surveyfields } = this.state;
+		const { surveyfields, surveytitle, surveyintroduction } = this.state;
 		console.log(surveyfields)
 		return (
 			<div className="createsurvey-page">
 				<div className="create-survey-contents">
 					<h2 className="create-survey-title">Survey builder</h2>
+					<div className="create-survey-introduction">
+						<input type="text" className="create-survey-introduction-title" value={surveytitle} onChange={this.updateIntroduction} name="surveytitle" />
+						<textarea className="create-survey-description" value={surveyintroduction} onChange={this.updateIntroduction} name="surveyintroduction" />
+					</div>
 					{
 						surveyfields.map(field => {
 							if (field.fieldtype === 'formfield'){

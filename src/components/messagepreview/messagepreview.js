@@ -1,4 +1,5 @@
 import React from 'react';
+
 import './messagepreview.css';
 
 function MessagePreview({ sender, basis, sent, message, title }) {

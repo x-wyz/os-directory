@@ -1,6 +1,4 @@
-
-
-.group-container {
+ .group-container {
 	display: flex;
 	/* will probably change this in the future which is why i'm doing this instead of adding directly */
 	--group-border: var(--color-light-blue-tertiary);

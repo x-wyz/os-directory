@@ -1,5 +1,8 @@
 import React from 'react';
+
 import './inputfield.css';
+
+// TODO: implement visuals for error checking
 
 function InputField({ label, onChange, className, type, value, errorChecker, errorMessage, name, inputClass }) {
 	let hasError;

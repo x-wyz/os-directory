@@ -1,16 +1,14 @@
 import React from 'react';
-import './formcontrol.css';
-
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
-function FormControl({ title, description, icon, iconClass, handler }){
-	return (
-		<div className="form-control-container" onClick={handler} >
-			<h4 className="form-control-title">{ title }</h4>
-			<FontAwesomeIcon className={`formcontrol-icon ${iconClass}`} icon={icon} />
-			<p className="form-control-description">{ description }</p>
-		</div>
-	)
-}
+import './formcontrol.css';
+
+const FormControl = ({ title, description, icon, iconClass, handler }) => (
+	<div className="fc-container" onClick={handler} >
+		<h4 className="fc-title">{title}</h4>
+		<FontAwesomeIcon className={`fc-icon ${iconClass}`} icon={icon} />
+		<p className="fc-description">{description}</p>
+	</div>
+)
 
 export default FormControl;

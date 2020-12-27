@@ -100,7 +100,7 @@ required but using it here for clarity, also .form-control container is from
 a diff component and but I need it here to overwrite the default one from that component
 */
 
-.form-control-container:hover .survey-text-icon {
+.fc-container:hover .survey-text-icon {
 	color: #c74564 !important;
 }
 

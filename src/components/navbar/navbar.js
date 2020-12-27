@@ -1,11 +1,11 @@
 import React, { Component } from 'react';
-import './navbar.css';
+import { faUser, faSearch, faHome, faComments, faProjectDiagram, faSignOutAlt as signOut, faSignInAlt as signIn } from '@fortawesome/free-solid-svg-icons';
 
 import NavigationLink from '../navigationlink/navigationlink';
 
 import LoginRegister from '../../modals/loginregister/loginregister';
 
-import { faUser, faSearch, faHome, faComments, faProjectDiagram, faSignOutAlt as signOut, faSignInAlt as signIn } from '@fortawesome/free-solid-svg-icons';
+import './navbar.css';
 
 class Navbar extends Component {
 	constructor(props){
@@ -14,11 +14,9 @@ class Navbar extends Component {
 		this.state = {
 			showLogin: false
 		}
-
-		this.toggleLogin = this.toggleLogin.bind(this);
 	}
 
-	toggleLogin(){
+	toggleLogin = () => {
 		this.setState({
 			showLogin: !this.state.showLogin
 		})
@@ -27,7 +25,7 @@ class Navbar extends Component {
 	render(){
 		const { showLogin } = this.state;
 		return (
-			<React.Fragment>
+			<div>
 				{
 					showLogin ? <LoginRegister close={this.toggleLogin} /> : null
 				}
@@ -47,7 +45,7 @@ class Navbar extends Component {
 						<NavigationLink icon={signIn} text="Login" link="#" iconClass="signin-ico" addText={true} onClick={this.toggleLogin} />
 					}
 				</div>
-			</React.Fragment>
+			</div>
 		)
 	}
 }

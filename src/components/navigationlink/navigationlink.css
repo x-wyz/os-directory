@@ -1,4 +1,4 @@
-.navigation-link {
+.nav-link {
 	color: black;
 	display: block;
 	width: 100%;
@@ -13,7 +13,7 @@
 	transition: 0.2s background;
 }
 
-.navigation-link:hover {
+.nav-link:hover {
 	background: var(--color-mist-tertiary);
 }
 

@@ -1,4 +1,4 @@
-.search-preview-container {
+.preview-container {
 	width: 48%;
 	max-height: 140px;
 	overflow-y: hidden;
@@ -9,16 +9,16 @@
 	box-shadow: var(--shadow-2);
 }
 
-.search-preview-container:hover {
+.preview-container:hover {
 	background: #f1fbfd;
 }
 
-.search-preview-title {
+.preview-title {
 	font-weight: 800;
 	font-size: 1.3em;
 }
 
-.search-preview-title-type {
+.preview-title-type {
 	font-size: 0.9em;
 	text-transform: uppercase;
 	position: relative;
@@ -26,11 +26,11 @@
 	color: #af055c;
 }
 
-.search-preview-owner {
+.preview-owner {
 	font-size: 0.9em;
 }
 
-.search-preview-body {
+.preview-body {
 	font-size: 1.03em;
 	line-height: 125%;
 }
