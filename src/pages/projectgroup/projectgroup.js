@@ -93,6 +93,56 @@ class ProjectGroup extends Component {
 					date: '20-20-2020::11:12',
 					message: 'Donec consequat odio vitae diam laoreet, eu volutpat diam suscipit. Vivamus mauris sapien, rhoncus vel dignissim eu, gravida sed dolor.'
 				},
+				{
+					name: 'user2',
+					date: '20-20-2020::11:12',
+					message: 'Donec consequat odio vitae diam laoreet, eu volutpat diam suscipit. Vivamus mauris sapien, rhoncus vel dignissim eu, gravida sed dolor.'
+				},
+				{
+					name: 'user2',
+					date: '20-20-2020::11:12',
+					message: 'Donec consequat odio vitae diam laoreet, eu volutpat diam suscipit. Vivamus mauris sapien, rhoncus vel dignissim eu, gravida sed dolor.'
+				},
+				{
+					name: 'user2',
+					date: '20-20-2020::11:12',
+					message: 'Donec consequat odio vitae diam laoreet, eu volutpat diam suscipit. Vivamus mauris sapien, rhoncus vel dignissim eu, gravida sed dolor.'
+				},
+				{
+					name: 'user2',
+					date: '20-20-2020::11:12',
+					message: 'Donec consequat odio vitae diam laoreet, eu volutpat diam suscipit. Vivamus mauris sapien, rhoncus vel dignissim eu, gravida sed dolor.'
+				},
+				{
+					name: 'user2',
+					date: '20-20-2020::11:12',
+					message: 'Donec consequat odio vitae diam laoreet, eu volutpat diam suscipit. Vivamus mauris sapien, rhoncus vel dignissim eu, gravida sed dolor.'
+				},
+				{
+					name: 'user2',
+					date: '20-20-2020::11:12',
+					message: 'Donec consequat odio vitae diam laoreet, eu volutpat diam suscipit. Vivamus mauris sapien, rhoncus vel dignissim eu, gravida sed dolor.'
+				},
+				{
+					name: 'user2',
+					date: '20-20-2020::11:12',
+					message: 'Donec consequat odio vitae diam laoreet, eu volutpat diam suscipit. Vivamus mauris sapien, rhoncus vel dignissim eu, gravida sed dolor.'
+				},
+				{
+					name: 'user2',
+					date: '20-20-2020::11:12',
+					message: 'Donec consequat odio vitae diam laoreet, eu volutpat diam suscipit. Vivamus mauris sapien, rhoncus vel dignissim eu, gravida sed dolor.'
+				},
+				{
+					name: 'user2',
+					date: '20-20-2020::11:12',
+					message: 'Donec consequat odio vitae diam laoreet, eu volutpat diam suscipit. Vivamus mauris sapien, rhoncus vel dignissim eu, gravida sed dolor.'
+				},
+				{
+					name: 'user2',
+					date: '20-20-2020::11:12',
+					message: 'Donec consequat odio vitae diam laoreet, eu volutpat diam suscipit. Vivamus mauris sapien, rhoncus vel dignissim eu, gravida sed dolor.'
+				},
 			],
 			tasks: [
 				{

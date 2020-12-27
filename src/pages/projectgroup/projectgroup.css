@@ -189,6 +189,7 @@
 	outline: 0;
 	padding: var(--medium-increment);
 	font-size: 0.9em;
+	display: block;
 }
 
 .group-send-message-button {
@@ -200,6 +201,7 @@
 	border: 3px solid var(--group-border-color);
 	border-left: 0;
 	color: var(--white);
+	box-sizing: border-box;
 }
 
 .group-send-message-button:hover {
@@ -207,7 +209,7 @@
 }
 
 .group-overflow-container {
-	overflow-y: scroll;
+	overflow-y: auto;
 }
 
 .group-task-height {
