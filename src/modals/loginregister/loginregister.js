@@ -1,10 +1,11 @@
 import React, { Component } from 'react';
-import './loginregister.css';
 
 import ModalBase from '../../components/modalbase/modalbase';
 import InputField from '../../components/inputfield/inputfield';
 import Button from '../../components/button/button';
 import ServerMessage from '../../components/servermessage/servermessage';
+
+import './loginregister.css';
 
 class LoginRegister extends Component {
 	constructor(props){
@@ -22,49 +23,43 @@ class LoginRegister extends Component {
 			servermessage: null,
 			servererror: false
 		}
-		this.swap = this.swap.bind(this);
-		this.submitRegister = this.submitRegister.bind(this);
-		this.submitLogin = this.submitLogin.bind(this);
-
-		this.loginContent = this.loginContent.bind(this);
-		this.registerContent = this.registerContent.bind(this);
-
-		this.update = this.update.bind(this);
 	}
 
-	swap(state){
+	swap = (state) => {
 		this.setState({
 			login: state
 		})
 	}
 
-	update(event){
+	update = (event) => {
 		this.setState({
 			[event.target.name]:event.target.value
 		})
 	}
 
-	submitRegister(event){
+	submitRegister = (event) => {
 		event.preventDefault();
 	}
 
-	submitLogin(event){
+	submitLogin = (event) => {
 		event.preventDefault();
 	}
 
-	loginContent(){
+	loginContent = () => {
 		const { loginEmail, loginPassword } = this.state;
+
 		return (
 			<form className="loginmodal-login-form" onSubmit={this.submitLogin}>
 				<InputField label="Email" onChange={this.update} value={loginEmail} name="loginEmail" type="text" />
 				<InputField label="Password" onChange={this.update} value={loginPassword} name="loginPassword" type="password" />
-				<Button text="Sign In" className="loginmodal-submit-button" type="submit"/>
+				<Button text="Sign In" className="loginmodal-submit-button" type="submit" />
 			</form>
 		)
 	}
 
-	registerContent(){
+	registerContent = () => {
 		const { registerEmail, registerPassword, registerPasswordConfirm, registerUsername } = this.state;
+
 		return (
 			<form className="loginmodal-register-form" onSubmit={this.submitRegister}>
 				<InputField label="Username" onChange={this.update} value={registerUsername} name="registerUsername" type="text" />
@@ -78,6 +73,7 @@ class LoginRegister extends Component {
 
 	render(){
 		const { login, servermessage } = this.state;
+
 		return (
 			<div className="loginregister-hidden-overflow">
 				<ModalBase exitFunction={this.props.close}>

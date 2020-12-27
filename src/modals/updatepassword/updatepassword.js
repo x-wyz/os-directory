@@ -17,18 +17,15 @@ class UpdatePassword extends Component {
 			servermessage: null,
 			servererror: false
 		}
-
-		this.submitNewPassword = this.submitNewPassword.bind(this);
-		this.update = this.update.bind(this);
 	}
 
-	update(event){
+	update = (event) => {
 		this.setState({
 			[event.target.name]: event.target.value
 		})
 	}
 
-	submitNewPassword(event){
+	submitNewPassword = (event) => {
 		event.preventDefault();
 	}
 
