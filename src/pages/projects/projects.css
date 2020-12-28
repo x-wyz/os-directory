@@ -20,9 +20,13 @@
 
 .projects-page-title {
 	font-size: 1.7em;
-	text-indent: 10%;
 	font-weight: bold;
 	margin: var(--medium-increment) 0;
+	border-bottom: 3px solid var(--dark-gray);
+	width: max-content;
+	text-align: center;
+	margin-left: 10%;
+	padding-bottom: calc(var(--small-increment) / 2);
 }
 
 .projects-create-btn {

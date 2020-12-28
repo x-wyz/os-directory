@@ -10,5 +10,10 @@
 
 .messages-title {
 	font-size: 1.8em;
-	padding-left: var(--medium-increment);
+	font-weight: bold;
+	padding-bottom: var(--small-increment);
+	border-bottom: 4px solid var(--dark-gray);
+	width: 15%;
+	text-align: center;
+	margin-left: var(--medium-increment);
 }
