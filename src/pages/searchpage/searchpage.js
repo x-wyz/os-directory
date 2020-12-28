@@ -62,36 +62,28 @@ class SearchPage extends Component {
 				},
 			]
 		}
-
-		this.update = this.update.bind(this);
-		this.updatefilter = this.updatefilter.bind(this);
-		this.submit = this.submit.bind(this);
-
-		this.updatePreview = this.updatePreview.bind(this);
-
-		this.reset = this.reset.bind(this);
 	}
 
-	reset(){
+	reset = () => {
 		this.setState({
 			preview: ""
 		})
 	}
 
-	update(event){
+	update = (event) => {
 		this.setState({
 			searchterm: event.target.value
 		})
 	}
 
-	updatefilter(event){
+	updatefilter = (event) => {
 		const { filter } = this.state;
 		filter[event.target.name] = event.target.value
 
 		this.setState({filter});
 	}
 
-	updatePreview(type, id){
+	updatePreview = (type, id) => {
 		this.setState({
 			preview: {
 				type, id
@@ -99,12 +91,13 @@ class SearchPage extends Component {
 		})
 	}
 
-	submit(event){
+	submit = (event) => {
 		event.preventDefault();
 	}
 	
 	render(){
 		const { searchterm, results, preview } = this.state;
+
 		return (
 			<div className="searchpage-container">
 				<div className="searchpage-header">

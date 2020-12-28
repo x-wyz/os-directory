@@ -21,7 +21,7 @@ class CreateSurvey extends Component {
 		}
 	}
 
-	createfield(type){
+	createfield = (type) => {
 		const { surveyfields, num } = this.state;
 		let newField = {
 			id: num,
