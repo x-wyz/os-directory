@@ -19,4 +19,5 @@
 	display: flex;
 	position: absolute;
 	top: 20%;
+	box-shadow: var(--shadow-2);
 }

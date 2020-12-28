@@ -46,7 +46,8 @@ class UpdatePassword extends Component {
 					<InputField 
 						label="Current password" 
 						onChange={this.update} 
-						className="updatepassword-modal-input" 
+						inputClass="updatepassword-modal-input" 
+						labelClass="update-password-label"
 						type="password" 
 						value={oldpassword}
 						name="oldpassword"
@@ -54,7 +55,8 @@ class UpdatePassword extends Component {
 					<InputField 
 						label="New password" 
 						onChange={this.update} 
-						className="updatepassword-modal-input" 
+						inputClass="updatepassword-modal-input" 
+						labelClass="update-password-label"
 						type="password" 
 						value={newpassword}
 						name="newpassword"
@@ -62,7 +64,8 @@ class UpdatePassword extends Component {
 					<InputField 
 						label="Confirm new password" 
 						onChange={this.update} 
-						className="updatepassword-modal-input" 
+						inputClass="updatepassword-modal-input" 
+						labelClass="update-password-label"
 						type="password" 
 						value={confirmnewpassword}
 						name="confirmnewpassword"

@@ -1,5 +1,5 @@
 .loginmodal-content-container {
-	background: #898989;
+	background: var(--light-gray-secondary);
 	min-width: 400px;
 	width: 30vw;
 }
@@ -30,11 +30,35 @@
 }
 
 .current-loginmodal-title {
-	border: 3px solid #898989;
+	border: 3px solid #797979;
 }
 
 .not-current-loginmodal-title {
 	background: var(--dark-gray);
 	color: white;
 	border: 3px solid var(--dark-gray);
+}
+
+.login-register-input {
+	border: 3px solid var(--dark-gray);
+}
+
+.login-register-label {
+	background: var(--dark-gray);
+	margin-bottom: 0;
+	padding: var(--small-increment) var(--medium-increment);
+	width: max-content;
+	display: inline-block;
+	color: var(--white);
+	position: relative;
+	height: 30px;
+	font-size: 1em;
+}
+
+.loginmodal-submit-button {
+	background: var(--color-green);
+}
+
+.loginmodal-submit-button:hover {
+	background: var(--color-green-secondary);
 }

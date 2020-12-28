@@ -1,5 +1,5 @@
 .confirmation-modal-container {
-	background: #898989;
+	background: var(--light-gray-secondary);
 	width: 40vw;
 	min-width: 400px;
 	text-align: center;

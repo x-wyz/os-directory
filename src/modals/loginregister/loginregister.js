@@ -50,8 +50,8 @@ class LoginRegister extends Component {
 
 		return (
 			<form className="loginmodal-login-form" onSubmit={this.submitLogin}>
-				<InputField label="Email" onChange={this.update} value={loginEmail} name="loginEmail" type="text" />
-				<InputField label="Password" onChange={this.update} value={loginPassword} name="loginPassword" type="password" />
+				<InputField labelClass="login-register-label" inputClass="login-register-input" label="Email" onChange={this.update} value={loginEmail} name="loginEmail" type="text" />
+				<InputField labelClass="login-register-label" inputClass="login-register-input" label="Password" onChange={this.update} value={loginPassword} name="loginPassword" type="password" />
 				<Button text="Sign In" className="loginmodal-submit-button" type="submit" />
 			</form>
 		)
@@ -62,10 +62,10 @@ class LoginRegister extends Component {
 
 		return (
 			<form className="loginmodal-register-form" onSubmit={this.submitRegister}>
-				<InputField label="Username" onChange={this.update} value={registerUsername} name="registerUsername" type="text" />
-				<InputField label="Email" onChange={this.update} value={registerEmail} name="registerEmail" type="email" />
-				<InputField label="Password" onChange={this.update} value={registerPassword} name="registerPassword" type="password" />
-				<InputField label="Password Confirm" onChange={this.update} value={registerPasswordConfirm} name="registerPasswordConfirm" type="password" />
+				<InputField labelClass="login-register-label" inputClass="login-register-input" label="Username" onChange={this.update} value={registerUsername} name="registerUsername" type="text" />
+				<InputField labelClass="login-register-label" inputClass="login-register-input" label="Email" onChange={this.update} value={registerEmail} name="registerEmail" type="email" />
+				<InputField labelClass="login-register-label" inputClass="login-register-input" label="Password" onChange={this.update} value={registerPassword} name="registerPassword" type="password" />
+				<InputField labelClass="login-register-label" inputClass="login-register-input" label="Password Confirm" onChange={this.update} value={registerPasswordConfirm} name="registerPasswordConfirm" type="password" />
 				<Button text="Sign Up" className="loginmodal-submit-button" type="submit"/>
 			</form>
 		)

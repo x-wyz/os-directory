@@ -8,9 +8,9 @@
 .searchpage-header {
 	height: 7vh;
 	box-sizing: border-box;
-	padding: var(--standard-increment);
 	background: #a6cfde;
-	
+	display: flex;
+	align-items: center;
 }
 
 .searchpage-results {
@@ -21,24 +21,32 @@
 	display: flex;
 	width: 60%;
 	margin: 0 auto;
+	justify-content: flex-end;
+	border: 3px solid var(--searchpage-button-bg);
 }
 
 .searchpage-header-input {
 	width: 100%;
+	margin-bottom: 0;
 }
 
 .searchpage-header-button {
-	padding: 4px;
+	padding: var(--small-increment);
 	font-size: 13.3333px;
 	background: var(--searchpage-button-bg);
 	color: white;
 	width: 20%;
 	box-sizing: border-box;
 	height: 100%;
+	margin-bottom: 0;
 }
 
 .searchpage-header-button:hover {
 	background: #2a3c43;
+}
+
+.searchpage-header-searchinput {
+	padding: var(--small-increment);
 }
 
 .searchpage-header-searchinput:focus {
