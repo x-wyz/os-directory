@@ -39,24 +39,23 @@ class PreviewPage extends Component {
 			},
 			showModal: false
 		}
-
-		this.submit = this.submit.bind(this);
-		this.showModal = this.showModal.bind(this);
 	}
 
-	showModal(state){
+	showModal = (state) => {
 		this.setState({
 			showModal: state
 		})
 	}
 
-	submit(){
+	submit(event){
 		// function will send join req to server, soon tm
+		event.preventDefault();
 	}
 
 	render(){
 		const { title, description, owner, status, otherinfo, created, links, requirements, members, type, details } = this.state.preview;
 		const { showModal } = this.state;
+		
 		return (
 			<React.Fragment>
 				{
