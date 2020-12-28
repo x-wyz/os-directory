@@ -76,11 +76,9 @@ class Projects extends Component {
 				},
 			]
 		}
-
-		this.renderProject = this.renderProject.bind(this);
 	}
 
-	renderProject(){
+	renderProject = () => {
 
 	}
 

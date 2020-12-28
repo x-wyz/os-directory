@@ -15,26 +15,21 @@ class Profile extends Component {
 			description: this.props.user.description || "",
 			passwordmodal: false
 		}
-		this.update = this.update.bind(this);
-		this.submitChanges = this.submitChanges.bind(this);
-
-		this.showModal = this.showModal.bind(this);
 	}
 
-	update(event){
+	update = (event) => {
 		this.setState({
 			[event.target.name]: event.target.value
 		})
-		console.log(123)
 	}
 
-	submitChanges(event){
+	submitChanges = (event) => {
 		event.preventDefault();
 
 		// sends change req to server and updates app
 	}
 
-	showModal(){
+	showModal = () => {
 		const { passwordmodal } = this.state;
 
 		this.setState({

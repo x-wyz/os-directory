@@ -220,27 +220,19 @@ class ProjectGroup extends Component {
 			],
 			newmessage: ""
 		}
-
-		this.grouptask = this.grouptask.bind(this);
-		this.groupmessage = this.groupmessage.bind(this);
-		this.grouplink = this.grouplink.bind(this);
-		this.groupuser = this.groupuser.bind(this);
-
-		this.update = this.update.bind(this);
-		this.sendMessage = this.sendMessage.bind(this);
 	}
 
-	update(event){
+	update = (event) => {
 		this.setState({
 			[event.target.name]: event.target.value
 		})
 	}
 
-	sendMessage(event){
+	sendMessage = (event) => {
 		event.preventDefault();
 	}
 
-	grouptask(task){
+	grouptask = (task) => {
 		return (
 			<div className={`group-task task-status-${task.status}`}>
 				<div className="group-task-body">
@@ -255,7 +247,7 @@ class ProjectGroup extends Component {
 		)
 	}
 
-	groupmessage(msg){
+	groupmessage = (msg) => {
 		return (
 			<div className="group-message">
 				<p className="group-message-header"><span className="group-message-sender">{msg.name}</span> <span className="group-at">	&nbsp;&nbsp;|&nbsp;&nbsp; </span> {msg.date}</p>
@@ -264,11 +256,11 @@ class ProjectGroup extends Component {
 		)
 	}
 
-	grouplink(link){
+	grouplink = (link) => {
 		return <a href={link[1]} target="_blank" className="group-link">{link[0]}</a>
 	}
 
-	groupuser(usr){
+	groupuser = (usr) => {
 		return <p className="group-user">{usr.name}</p>
 	}
 
