@@ -5,6 +5,7 @@ import { Switch, Route } from 'react-router-dom';
 import Navbar from './components/navbar/navbar';
 
 // Pages
+import Home from './pages/home/home';
 import SearchPage from './pages/searchpage/searchpage';
 import Messages from './pages/messages/messages';
 import Profile from './pages/profile/profile';
@@ -58,8 +59,10 @@ class App extends Component {
 				    		<Projects user={user} />
 				    	</Route>
 
-				    	<Route path="/survey" component={CreateSurvey} />
+				    	<Route path="/create-survey" component={CreateSurvey} />
 				    	<Route path="/group" component={ProjectGroup} />
+
+				    	<Route path="/" component={Home} />
 				    </Switch>
 				</div>
 		    </div>

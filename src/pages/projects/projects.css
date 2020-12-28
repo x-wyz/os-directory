@@ -20,7 +20,23 @@
 
 .projects-page-title {
 	font-size: 1.7em;
-	margin-top: var(--medium-increment);
 	text-indent: 10%;
 	font-weight: bold;
+	margin: var(--medium-increment) 0;
+}
+
+.projects-create-btn {
+	background: var(--dark-gray);
+	color: var(--white);
+	text-align: center;
+	font-size: 1.4em;
+	padding: var(--medium-increment);
+	margin: var(--small-increment) auto;
+	width: 80%;
+	transition: background 0.2s;
+	box-shadow: var(--shadow-1);
+}
+
+.projects-create-btn:hover {
+	background: var(--light-gray);
 }

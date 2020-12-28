@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
 
 import ProjectPreview from '../../components/projectpreview/projectpreview';
 
@@ -102,10 +103,13 @@ class Projects extends Component {
 				</div>
 	
 				<div className="projects-other">
-					<h3 className="projects-page-title">Others</h3>
-					{
-						others.map((other, idx) => <ProjectPreview key={`other-${other.id}-${idx}`} owner={other.owner} type="others" id={other.id} name={other.name} />)
-					}
+					<h3 className="projects-page-title">Build</h3>
+					<Link to="/create-project">
+						<p className="projects-create-project-btn projects-create-btn">Create Project</p>
+					</Link>
+					<Link to="/create-survey">
+						<p className="projects-create-survey-btn projects-create-btn">Create Survey</p>
+					</Link>
 				</div>
 			</div>
 		)
