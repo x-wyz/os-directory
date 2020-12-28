@@ -1,13 +1,11 @@
 import React, { Component } from 'react';
 import { v4 as uuidv4 } from 'uuid';
+import { faCheckSquare, faCheckCircle } from "@fortawesome/free-regular-svg-icons";
+import { faFont } from  "@fortawesome/free-solid-svg-icons";
 
 import Button from '../../components/button/button';
 import FormControl from '../../components/formcontrol/formcontrol';
-
 import SelectInput from '../../components/selectinput/selectinput';
-
-import { faCheckSquare, faCheckCircle } from "@fortawesome/free-regular-svg-icons";
-import { faFont } from  "@fortawesome/free-solid-svg-icons";
 
 import './createsurvey.css';
 
@@ -21,27 +19,6 @@ class CreateSurvey extends Component {
 			surveyintroduction: '',
 			num: 0
 		}
-
-		this.update = this.update.bind(this);
-		this.updateNum = this.updateNum.bind(this);
-		this.updateType = this.updateType.bind(this);
-		this.addOption = this.addOption.bind(this);
-		this.removeOption = this.removeOption.bind(this);
-		this.updateNewOption = this.updateNewOption.bind(this);
-
-		this.updateIntroduction = this.updateIntroduction.bind(this);
-
-		this.submit = this.submit.bind(this);
-		this.createfield = this.createfield.bind(this);
-		this.delete = this.delete.bind(this);
-
-		// For consistency not needed.
-		this.selectfields = this.selectfields.bind(this);
-		this.formfield = this.formfield.bind(this);
-		// ==========
-
-		this.header = this.header.bind(this);
-		this.footer = this.footer.bind(this);
 	}
 
 	createfield(type){
@@ -77,8 +54,9 @@ class CreateSurvey extends Component {
 		})
 	}
 
-	header(formfield){
+	header = (formfield) => {
 		const { fieldtype } = formfield;
+
 		return (
 			<div className="survey-create-header">
 				<p className={`survey-create-type ff-${fieldtype}`}>
@@ -110,7 +88,7 @@ class CreateSurvey extends Component {
 		)
 	}
 
-	footer(formfield){
+	footer = (formfield) => {
 		return (
 			<div className="create-survey-formfield-footer">
 				<Button text="Remove" type="button" className="survey-remove-formfield-btn" onClick={() => this.delete(formfield.id)} />
@@ -118,7 +96,7 @@ class CreateSurvey extends Component {
 		)
 	}
 
-	delete(id){
+	delete = (id) => {
 		const { surveyfields } = this.state;
 		const filteredSurveyFields = surveyfields.filter(fields => fields.id != id);
 
@@ -127,35 +105,36 @@ class CreateSurvey extends Component {
 		})
 	}
 
-	selectfields(formfield){
+	selectfields = (formfield) => {
 		const { options, ref, id } = formfield;
+
 		return (
 			<div className="survey-field-container">
 			{
 				this.header(formfield)
 			}
-			<div className="create-survey-selects-container">
-				<div className="selects-options-container">
-					{
-						options.map(option => {
-							return (
-								<div className="create-survey-option-container">
-									<Button text="Del" type="button" className="create-survey-remove-option" onClick={() => this.removeOption(id, option.id)} />
-									<p className="create-survey-option">
-										{
-											option.option
-										}
-									</p>
-								</div>
-							)
-						})
-					}
+				<div className="create-survey-selects-container">
+					<div className="selects-options-container">
+						{
+							options.map(option => {
+								return (
+									<div className="create-survey-option-container">
+										<Button text="Del" type="button" className="create-survey-remove-option" onClick={() => this.removeOption(id, option.id)} />
+										<p className="create-survey-option">
+											{
+												option.option
+											}
+										</p>
+									</div>
+								)
+							})
+						}
+					</div>
+					<div className="create-survey-options-input-container">
+						<input type="text" className="create-survey-create-option" onChange={(event) => this.updateNewOption(event, formfield.id)} value={ref} />
+						<Button text='Add' type="button" onClick={() => this.addOption(id)} className="create-survey-add-option-btn" />
+					</div>
 				</div>
-				<div className="create-survey-options-input-container">
-					<input type="text" className="create-survey-create-option" onChange={(event) => this.updateNewOption(event, formfield.id)} value={ref} />
-					<Button text='Add' type="button" onClick={() => this.addOption(id)} className="create-survey-add-option-btn" />
-				</div>
-			</div>
 			{
 				this.footer(formfield)
 			}
@@ -163,8 +142,9 @@ class CreateSurvey extends Component {
 		)
 	}
 
-	formfield(formfield){
+	formfield = (formfield) => {
 		const { id, max, min } = formfield;
+
 		return (
 			<div className="survey-field-container">
 			{
@@ -197,10 +177,10 @@ class CreateSurvey extends Component {
 		)
 	}
 
-	update(event){
-		const { surveyfields } = this.state;
+	update = (event) => {
+		let { surveyfields } = this.state;
 
-		const updatedSurveyFields = surveyfields.map(field => {
+		surveyfields = surveyfields.map(field => {
 			if (field.id == event.target.id){
 				field[event.target.name] = event.target.value;
 				return field;
@@ -210,32 +190,27 @@ class CreateSurvey extends Component {
 			}
 		})
 
-		this.setState({
-			surveyfields: updatedSurveyFields
-		})
+		this.setState({surveyfields});
 
 	}
 
-	updateIntroduction(event){
+	updateIntroduction = (event) => {
 		this.setState({
 			[event.target.name]:event.target.value
 		})
 	}
 
-	addOption(id){
+	addOption = (id) => {
 		let { surveyfields } = this.state;
-		let currentOptions = surveyfields.filter(field => field.id == id)[0];
-
-		currentOptions.options.push({
-			option: currentOptions.ref,
-			id: uuidv4()
-		})
-
-		currentOptions.ref = '';
 
 		surveyfields = surveyfields.map(field => {
 			if (field.id == id) {
-				return currentOptions;
+				field.options.push({
+					option: field.ref,
+					id: uuidv4()
+				})
+				field.ref = '';
+				return field;
 			}
 			else {
 				return field;
@@ -245,13 +220,13 @@ class CreateSurvey extends Component {
 		this.setState({surveyfields});
 	}
 
-	updateNewOption(event, id){
+	updateNewOption = (event, id) => {
 		let { surveyfields } = this.state;
-		let currentNewOption = surveyfields.filter(field => field.id == id)[0];
-		currentNewOption.ref = event.target.value;
+
 		surveyfields = surveyfields.map(field => {
 			if (field.id == id) {
-				return currentNewOption;
+				field.ref = event.target.value;
+				return field;
 			}
 			else {
 				return field;
@@ -261,14 +236,13 @@ class CreateSurvey extends Component {
 		this.setState({surveyfields});
 	}
 
-	removeOption(id, optId){
+	removeOption = (id, optId) => {
 		let { surveyfields } = this.state;
-		let updateSurveyFields = surveyfields.filter(field => field.id == id)[0];
-		updateSurveyFields.options = updateSurveyFields.options.filter(option => option.id != optId);
 
 		surveyfields = surveyfields.map(field => {
 			if (field.id == id){
-				return updateSurveyFields;
+				field.options = field.options.filter(option => option.id != optId);
+				return field;
 			}
 			else {
 				return field;
@@ -279,7 +253,7 @@ class CreateSurvey extends Component {
 
 	}
 
-	updateType(id, type){
+	updateType = (id, type) => {
 		let { surveyfields } = this.state;
 
 		surveyfields = surveyfields.map(field => {
@@ -295,8 +269,9 @@ class CreateSurvey extends Component {
 		this.setState({surveyfields})
 	}
 
-	updateNum(event, id){
+	updateNum = (event, id) => {
 		let { surveyfields } = this.state;
+
 		surveyfields = surveyfields.map(field => {
 			if (field.id == id) {
 				field[event.target.name] = event.target.value;
@@ -309,13 +284,13 @@ class CreateSurvey extends Component {
 		this.setState({surveyfields});
 	}
 
-	submit(event){
+	submit = (event) => {
 		event.preventDefault();
 	}
 
 	render(){
 		const { surveyfields, surveytitle, surveyintroduction } = this.state;
-		console.log(surveyfields)
+
 		return (
 			<div className="createsurvey-page">
 				<div className="create-survey-contents">
