@@ -9,6 +9,10 @@
 .profilepage-basic-header {
 	font-size: 1.6em;
 	margin-bottom: calc(var(--standard-increment) / 4);
+	border-bottom: 3px solid var(--dark-gray);
+	width: max-content;
+	padding-bottom: calc(var(--small-increment) / 2);
+	margin-bottom: var(--small-increment);
 }
 
 .profilepage-change-passsword {
