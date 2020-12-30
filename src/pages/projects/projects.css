@@ -52,7 +52,7 @@
 
 	.projects-groups, .projects-other, .projects-data {
 		width: 100%;
-		padding-bottom: var(--medium-increment);
+		padding-bottom: var(--standard-increment);
 	}
 
 	.projects-page-title {
