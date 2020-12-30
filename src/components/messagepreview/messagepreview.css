@@ -5,7 +5,7 @@
 	margin: var(--small-increment);
 	box-shadow: var(--shadow-1);
 	cursor: pointer;
-	transition: all 0.2s;
+	transition: background 0.2s;
 }
 
 .messagepreview-container:hover {

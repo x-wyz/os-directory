@@ -6,7 +6,7 @@
 }
 
 .survey-create-type {
-	width: 5%;
+	width: 10%;
 	font-size: 2.2em;
 	background: var(--white);
 	min-width: 50px;
@@ -24,8 +24,7 @@
 }
 
 .createsurvey-page {
-	width: 90%;
-	margin: 0 auto;
+	width: 100%;
 	padding: var(--medium-increment);
 	background: var(--color-light-blue-secondary);
 	min-height: 100vh;
@@ -109,13 +108,14 @@ a diff component and but I need it here to overwrite the default one from that c
 .survey-text-inputfield {
 	display: flex;
 	flex-direction: column;
-	width: 92%;
+	width: 88%;
 }
 
 .survey-field-container {
 	background: var(--color-mist);
 	margin-bottom: var(--small-increment);
 	padding: var(--medium-increment);
+	box-shadow: var(--shadow-2);
 }
 
 .survey-field-description, .survey-field-title {
@@ -184,6 +184,7 @@ a diff component and but I need it here to overwrite the default one from that c
 .create-survey-add-option-btn {
 	width: 10%;
 	background: var(--color-green);
+	box-shadow: none;
 }
 
 .create-survey-create-option {
@@ -228,4 +229,65 @@ a diff component and but I need it here to overwrite the default one from that c
 	border: none;
 	font-size: 1.1em;
 	text-align: center;
+}
+
+@media only screen and (max-width: 820px) {
+	.create-survey-controls {
+		flex-direction: column;
+		width: 100%;
+	}
+
+	.create-survey-buttons-container {
+		flex-direction: column-reverse;
+		margin-top: var(--medium-increment);
+		margin-bottom: var(--medium-increment);
+	}
+
+	.preview-survey-button, .submit-survey-button {
+		width: 90%;
+		margin: var(--small-increment) auto;
+	}
+
+	.survey-create-type {
+		width: 2%;
+	}
+
+	.survey-text-inputfield {
+		width: 80%;
+	}
+
+	.create-survey-remove-option {
+		width: 20%;
+	}
+
+	.create-survey-option {
+		width: 78%;
+	}
+
+	.create-survey-add-option-btn {
+		width: 20%;
+	}
+
+	.create-survey-create-option {
+		text-indent: 1em;
+	}
+
+	.create-survey-contents {
+		width: 100%;
+	}
+
+	.createsurvey-page {
+		padding: 0;
+	}
+}
+
+@media only screen and (max-width: 650px) {
+	.survey-create-type {
+		display: none;
+	}
+
+	.survey-text-inputfield {
+		width: 100%;
+		padding: 0;
+	}
 }

@@ -295,10 +295,12 @@ class CreateSurvey extends Component {
 			<div className="createsurvey-page">
 				<div className="create-survey-contents">
 					<h2 className="create-survey-title">Survey builder</h2>
-					<div className="create-survey-introduction">
-						<input type="text" className="create-survey-introduction-title" value={surveytitle} onChange={this.updateIntroduction} name="surveytitle" />
-						<textarea className="create-survey-description" value={surveyintroduction} onChange={this.updateIntroduction} name="surveyintroduction" />
-					</div>
+					{
+						// <div className="create-survey-introduction">
+						// 	<input type="text" className="create-survey-introduction-title" value={surveytitle} onChange={this.updateIntroduction} name="surveytitle" />
+						// 	<textarea className="create-survey-description" value={surveyintroduction} onChange={this.updateIntroduction} name="surveyintroduction" />
+						// </div>
+					}
 					{
 						surveyfields.map(field => {
 							if (field.fieldtype === 'formfield'){
