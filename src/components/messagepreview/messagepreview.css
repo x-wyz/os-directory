@@ -27,7 +27,7 @@
 
 @media only screen and (max-width: 1200px) {
 	.messagepreview-container {
-		width: 90%;
+		width: 100%;
 		margin: 0 auto var(--small-increment) auto;
 	}
 }
