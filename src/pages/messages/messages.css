@@ -19,6 +19,13 @@
 	margin-left: var(--medium-increment);
 }
 
+@media only screen and (max-width: 1200px) {
+	.messages-title {
+		margin-left: 6%;
+	}
+}
+
+
 @media only screen and (max-width: 820px) {
 	.messages-title {
 		width: 60%;
