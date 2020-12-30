@@ -1,9 +1,21 @@
+.profilepage {
+	display: flex;
+	flex-direction: column;
+	margin-top: 15vh;
+}
+
+.profile-title {
+	text-align: center;
+	font-size: 2.2em;
+	margin-bottom: var(--small-increment);
+}
+
 .profilepage-basic-information {
 	width: 55%;
 	min-width: 200px;
 	background: var(--color-mist-secondary);
 	padding: var(--standard-increment);
-	margin: 20vh auto 0;
+	margin: 0 auto;
 }
 
 .profilepage-basic-header {
@@ -39,8 +51,28 @@
 	/* Ensures the smallest the button can be will be equal to the change pw btn */
 	min-width: calc(200px * .8);
 	background: var(--color-green);
+	margin-bottom: var(--medium-increment);
 }
 
 .profile-update-button:hover {
 	background: var(--color-green-secondary);
+}
+
+@media only screen and (max-width: 820px) {
+	.profilepage-basic-information, .profilepage-change-passsword {
+		width: 95%;
+	}
+
+	.profile-update-button {
+		width: 60%;
+		margin-bottom: 0;
+	}
+
+	.profilepage-basic-header {
+		width: 70%;
+		margin: 0 auto var(--small-increment) auto;
+		text-align: center;
+		border-color: rgba(255,255,255, 0.4);
+	}
+
 }

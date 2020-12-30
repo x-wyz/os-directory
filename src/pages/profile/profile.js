@@ -50,6 +50,7 @@ class Profile extends Component {
 					null
 				}
 				<div className="profilepage">
+					<h3 className="profile-title">Profile</h3>
 					<div className="profilepage-basic-information">
 						<h3 className="profilepage-basic-header">Basic Information</h3>
 						<ProfileUpdater label="Username" type="text" handler={this.update} name="username" value={username} />
